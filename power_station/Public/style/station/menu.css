@@ -17,7 +17,7 @@
   border-top:1px solid rgba(42, 171, 210, 0.36);
   overflow-x:hidden;
   overflow-y:auto;
-  z-index: 100;
+  z-index: 100; 
 }
 
 #right{
