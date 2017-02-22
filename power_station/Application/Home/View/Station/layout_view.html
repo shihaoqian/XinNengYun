@@ -1,0 +1,507 @@
+<include file="Common/station_monitor_header" />
+  	
+    <!-- 顶部导航条 -->
+    <div id="topbar">
+      <include file="Common/topbar" />
+    </div>
+  <!-- 顶部影藏信息-->
+    <include file="Common/tophidden" />
+
+
+
+
+    <!-- 左侧菜单栏 -->
+     <div id="left">
+      <include file="Common/left" />
+    </div>
+
+    <!-- 主要内容 -->
+    <div id="right" >
+      <div class="right_d">
+      	<!-- 布局视图的标题 -->
+      	<div class="lv_title1">
+              <span style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
+              <span style="cursor:pointer;color:#428bca;">[切换]</span>
+              <ul style="margin-right: 50px;float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend">
+                  <a class="lv_a1">
+                      <i class="lv_fa fa-circle-o" style="color: rgb(63, 173, 34); display: none;"></i>
+                      <i class="lv_fa fa-check-circle-o" style="color: rgb(63, 173, 34); display: inline-block;"></i>
+                      正常
+                      <input type="hidden" value name="normal_deviceId_jqselect">
+                  </a>
+                  <a class="lv_a1">
+                      <i class="lv_fa fa-circle-o" style="color: #db412f; display: none;"></i>
+                      <i class="lv_fa fa-check-circle-o" style="color: #db412f; display: inline-block;"></i>
+                      故障
+                      <input type="hidden" value name="error_deviceId_jqselect">
+                  </a>
+                  <a class="lv_a1">
+                      <i class="lv_fa fa-circle-o" style="color: #f90; display: none;"></i>
+                      <i class="lv_fa fa-check-circle-o" style="color: #f90; display: inline-block;"></i>
+                      报警
+                      <input type="hidden" value name="alert_deviceId_jqselect">
+                  </a>
+                  <a class="lv_a1">
+                      <i class="lv_fa fa-circle-o" style="color: #999; display: none;"></i>
+                      <i class="lv_fa fa-check-circle-o" style="color: #999; display: inline-block;"></i>
+                      中断
+                      <input type="hidden" value name="break_deviceId_jqselect">
+                  </a>
+                  <a class="lv_a1">
+                      <i class="lv_fa fa-circle-o" style="color: #ccc; display: none;"></i>
+                      <i class="lv_fa fa-check-circle-o" style="color: #ccc; display: inline-block;"></i>
+                      阴影遮挡
+                      <input type="hidden" value name="shadow_deviceId_jqselect">
+                  </a>
+              </ul>
+              <ul style="margin-right: 0px; float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend_All">
+                  <!--
+                  <i style="display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;
+                  text-rendering: auto;-webkit-font-smoothing: antialiased;"></i>
+                  -->
+                   <a class="lv_a1">
+                      <i class="lv_fa fa-circle-o" style=" display: none;"></i>
+                      <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
+                      全选
+                      <input type="hidden" value name="all_deviceId_jqselect">
+                  </a>
+              </ul> 
+        </div>
+
+        <div class="lv_content1" style="background-color: #F0F3F4">
+            <div id="ZL" class="clearfix" >
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">1#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">2#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe2_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">3#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe3_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">4#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe4_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">5#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe1_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe5_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">6#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe6_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">7#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">8#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe8_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">9#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe9_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">10#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe10_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">11#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe11_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">12#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe12_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">13#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe13_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">14#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">15#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe15_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">16#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe16_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">17#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe17_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">18#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe18_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">19#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe19_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">20#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe20_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">21#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">22#阵列</span>
+                  <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe22_P9"></span>
+                  </div>
+              </div>
+              <div class="zhenlie">
+                  <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
+                  <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">23#阵列</span>
+                   <div>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P1"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P2"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P3"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P4"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P6"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P7"></span>
+                    <br>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P8"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe23_P9"></span>
+                  </div>
+              </div>
+            </div>
+
+            <div class="biaoge2" style="display:none">
+              <table class="table_c" id="table3-1"></table>
+           </div>
+           <div style="margin-top:20px" class="clearfix">
+             <button  class="b_back">返回布局试图</button>
+           </div> 
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/mmGrid.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/header_public.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/layout_view.js"></script>
+  </body>
+</html>

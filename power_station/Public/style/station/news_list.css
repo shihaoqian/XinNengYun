@@ -1,0 +1,124 @@
+.right_m{
+	display: table;
+    width: 100%;
+    height: 100%;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+.right_left{
+	width: 290px;
+    float: none;
+    height: 100% !important;
+    vertical-align: top;
+    overflow: hidden;
+    display: table-cell;
+}
+.task_box{
+	position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    border-spacing: 0;
+}
+.bg-light{
+	color: #58666e;
+    background-color: #edf1f2;
+}
+.no-border{
+    border-color: transparent;
+    border-width: 0;
+}
+.padder{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.rounded{
+    border-radius:500px;
+}
+.ul_news{
+	text-align: center;
+	border: none;
+    border-bottom: 1px solid #ddd;
+    color: #58666e;
+    background-color: #fff;
+    list-style: none;
+    display: block;
+    margin-bottom: 0;
+}
+.ul_news>li{
+	display: block;
+	float: left;
+	border-bottom: 1px solid #06bebd;
+	width: 33.33333333%;
+	color: #58666e;
+	height: 39px;
+	line-height: 39px;
+}
+.task_box .rows_news{
+    display: table-row;
+    height: 100%;
+}
+.cehh{
+	position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    background-color: #fff;
+    color: #58666e;
+    background: transparent;
+}
+.cell_inner{
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+.news_content{
+	background-color: #fff;
+	border-bottom: 1px solid #dbe1e8;
+    color: #58666e;
+	padding: 15px;
+	cursor: pointer!important;
+}
+.icon_attr{
+	width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+.text-attr{
+	display: inline-block;
+	width: 76px;
+	cursor: pointer;
+
+}
+.note_page{
+	width: 280px;
+    padding-top: 10px;
+    height: 100%;
+    background:#f0f3f4
+}
+.note_contain{
+	min-width: 280px;
+	padding: 0 !important;
+
+}
+.page_text{
+	margin-top: 8px;
+	font-size: 12px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	display: inline-block !important;
+	color: #98a6ad;
+}
+.right_right{
+	height: 100%;
+	background-color: #f6f8f8;
+	display: table-cell;
+}

@@ -1,0 +1,109 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="image/x-icon" rel="shortcut icon" href="/hahaha/thinkphp/Public/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/Register.css">
+	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/main.css">
+	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert.css">
+	<title>新能源系统</title>
+</head>
+<body>
+	<div style="height:50px;background-color:#fff;border:1px solid #f2f2f2;z-index:1">
+		<div class="R_head_container">
+			<div style="width:200px;height:50px;background-color:#fff;display:table-cell;vertical-align:middle">
+				<img src="/hahaha/thinkphp/Public/images/pc_header_logo.png" style="vertical-align:middle;height:25px;width:25px">
+				<span style="opacity: 0.7;font-size:18px;margin-left:10px;font-weight:700;vertical-align:bottom">新能源</span>
+			</div>
+			<ul class="pull-right nav navbar-nav text-md" style="margin-top:-50px">
+				<li><a class="li_head" href="index">进入官网</a></li>
+				<li><a class="li_head" href="index/">演示电站</a></li>
+				<li><a class="li_head" href="">客户端下载</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="reg_control">
+		<div class="reg_panel">
+			<ul class="list-unstyled clearfix text-center">
+				<li class="reg_person" id="person">
+					<i class="glyphicon glyphicon-user"></i>                 个人注册
+					<span id="caret_person" class="caret caret_po"></span>
+				</li>
+				<li class="reg_company" id="company">
+					<i class="glyphicon glyphicon-home"></i>                 企业注册
+					<span id="caret_company" class="caret caret_po" style="display:none"></span>
+				</li>
+			</ul>
+		</div>
+		<!--个人注册
+		-->
+		<div class="reg_body">
+			<div style="text-align:right;margin-bottom:8px">已有账号，<a style="color:#06bebd" href="index">直接登陆</a></div>
+			<form id="reg_person_form" method="post" class="form-horizontal" role="form" action="user_register"">
+				<div class="form-group">
+					<label class="form_lable">手机号</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="phone" type="text" placeholder="请输入您的手机号">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form_lable">用户名</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="id" type="text" placeholder="请输入您想要的用户名">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form_lable">密码</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="password" type="text" placeholder="请输入您想要的密码">
+					</div>
+				</div>
+				<div class="form-group">
+					<div style="margin-left:35%;margin-top:15px;width:75%">
+						<button id="reg_person_submit" class="btn" type="button">提交</button>
+						<span class="glyphicon glyphicon-phone-alt" style="color: #005bac">     客服电话：18896581692</span> 
+					</div>
+				</div>
+			</form>
+			<form id="reg_company_form" method="post" class="form-horizontal" role="form" style="display:none" action="http://localhost:8080/hahaha/thinkphp/Home/User/company_register"">
+				<div class="form-group">
+					<label class="form_lable">公司名称</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="company_name" type="text" placeholder="请输入您的企业名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form_lable">管理员账号</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="company_phone" type="text" placeholder="请输入您的手机号">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form_lable">用户名</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="id" type="text" placeholder="请输入您的用户名">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form_lable">密码</label>
+					<div class="form_div">
+						<input class="form-control valid-required valid-tel" id="tel-per" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="password" type="text" placeholder="请输入您的密码">
+					</div>
+				</div>
+				<div class="form-group">
+					<div style="margin-left:35%;margin-top:15px;width:75%">
+						<button id="reg_company_submit" class="btn" type="button">提交</button>
+						<span class="glyphicon glyphicon-phone-alt" style="color: #005bac">     客服电话：18896581692</span> 
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.form.js"></script>
+<script type="text/javascript" src="/hahaha/thinkphp/Public/script/Register.js"></script>
+<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert-dev.js"></script>
+</html>

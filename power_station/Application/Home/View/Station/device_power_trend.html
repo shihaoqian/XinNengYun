@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据可视化</title>
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/power_station_monitor.css">
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/jquery.datetimepicker.css">
+    
+    <style type="text/css">
+      .troublealarm_table1c{
+        background-color: white;
+     }
+
+      .troublealarm_table1c th{
+        font-size: 16px;
+        background-color: #FAFBFC;
+        text-align: center;
+        color: #1caf9a;
+        padding:10px 15px;
+      }
+
+      .troublealarm_table1c td{
+        font-size: 14px;
+        text-align: center;
+        height: 40px;
+        color: #666;
+      }
+
+      .th1{
+        width: 5%;
+      }
+      .th2{
+        width: 10%;
+      }
+    </style>
+
+    <style type="text/css">
+    a:link {
+    text-decoration: none;
+    }
+    a:visited {
+    text-decoration: none;
+    }
+    a:hover {
+    text-decoration: none;
+    }
+    a:active {
+    text-decoration: none;
+    }
+    </style>
+  </head>
+  <body onload="decodeMessage()">
+  	
+    <!-- 顶部导航条 -->
+    <div id="topbar">
+     <include file="Common/topbar" />
+    </div>
+
+
+ <!-- 顶部影藏信息-->
+     <include file="Common/tophidden" />
+
+    <!-- 左侧菜单栏 -->
+     <div id="left">
+      <include file="Common/left" />
+    </div>
+
+    <!-- 主要内容 -->
+    <div id="right" >
+    <div class="right_d">
+    	<!-- 布局视图的标题 -->
+    	<div class="lv_title1">
+            <span style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
+            <span style="cursor:pointer;color:#428bca;">[切换]</span>
+        
+        </div>
+
+        <div class="lv_content11" style="background-color: #F0F3F4;height:700px;">
+
+            <div class="chaxun" style="min-width:1300px;height:70px;">
+                <div class="running_log2" style="float:left;width:1000px;height:50px;margin-top:10px;padding:5px;display:inline-block;">
+                  <span style="float:left;padding:10px 5px;display:inline-block;">设备总数</span>
+                  <span style="float:left;padding:10px 10px;display:inline-block;">   17台</span>
+                  <span style="float:left;padding:10px 10px;display:inline-block;">已选择设备数</span>
+                  <span style="float:left;padding:10px 5px;display:inline-block;">0台</span>
+                  <button type="button" class="running_log_chaxun2" style="margin-left:10px;margin-right:10px;">选择设备</button>
+                 
+                  <input type="text" name="" id="datetimepicker" class="listview_shuru2" style="width:150px;height:38px;margin-left:15px;">
+                  <span class="running_log_zhi2">至</span>
+                  <input type="text" name="" id="datetimepicker2" class="listview_shuru2" style="width:150px;height:38px;margin-left:0px;">
+
+                  <button type="button" class="running_log_chaxun2">查询</button>
+                  <p style="display: inline-block;float:left;margin-left:30px;padding:10px 10px;"><input type="checkbox" name="category" value="财经" style="margin-left:0px;padding:10px 5px;" />逆变器归一化</p>
+
+                </div>
+         
+                <!-- <div class="trouble_alarm_table">
+                   <table id="troublealarm_table1" class="troublealarm_table1c">
+                </table> 
+                </div> -->
+            </div>
+            <div>
+              <span style="float:left;padding:10px 10px;display:inline-block;">已选中:</span>
+            </div> 
+
+        
+          
+
+        </div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript">
+      function decodeMessage(){
+      var tmp="g";
+      // tmp+="<th class=\"th1\">开始时间</th><th class=\"th1\">结束时间</th><th class=\"th1\">设备名称</th><th class=\"th2\">事件内容</th>"
+      // for(j=0;j<=5;j++){
+      //   tmp+="<tr>";
+        
+      //   tmp+= "<td>"+"2017-02-12 10:01:16"+"</td>"+
+      //         "<td>"+"2017-02-12 12:01:16"+"</td>"+
+      //         "<td style=\"color:#428ED4;\">"+"HJ01B-4-A-01"+"</td>"+
+      //         "<td>"+"断流器跳闸"+"</td>";
+      
+      //   tmp+="<tr>";
+      
+     
+         //document.getElementById("troublealarm_table1").innerHTML=tmp;
+     }
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/script/station/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/script/station/jquery.datetimepicker.full.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/running_log.js"></script>
+    <script src="__PUBLIC__/script/station/bootstrap.min.js"></script>    
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+  </body>
+</html>
