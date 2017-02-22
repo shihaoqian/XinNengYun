@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>数据可视化</title>
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/main.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/menu.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/power_station_monitor.css">
-    <link type="image/x-icon" rel="shortcut icon" href="/hahaha/thinkphp/Public/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/main.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/menu.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/power_station_monitor.css">
+    <link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
   </head>
   <body>
   	
@@ -418,7 +418,7 @@
     			<div class="right2_div2_setbkcolor" style="background-color:#E74C3C;">
     				<div class="right2_div3">
     					<div class="right2_div5">
-    						<img src="/hahaha/thinkphp/Public/images/right2_power.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
+    						<img src="/XinNengYun/power_station/Public/images/right2_power.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
     					</div>
     					<div class="right2_div6">
     						<div>
@@ -447,7 +447,7 @@
     			<div class="right2_div2_setbkcolor" style="background-color:#1CAF9A;">
     				<div class="right2_div3">
     					<div class="right2_div5">
-    						<img src="/hahaha/thinkphp/Public/images/right2_dayelec.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
+    						<img src="/XinNengYun/power_station/Public/images/right2_dayelec.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
     					</div>
     					<div class="right2_div6">
     						<div>
@@ -476,7 +476,7 @@
     			<div class="right2_div2_setbkcolor" style="background-color:#428BCA;">
     				<div class="right2_div3">
     					<div class="right2_div5">
-    						<img src="/hahaha/thinkphp/Public/images/right2_monthelec.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
+    						<img src="/XinNengYun/power_station/Public/images/right2_monthelec.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
     					</div>
     					<div class="right2_div6">
     						<div>
@@ -505,7 +505,7 @@
     			<div class="right2_div2_setbkcolor" style="background-color:#1D2939;">
     				<div class="right2_div3">
     					<div class="right2_div5">
-    						<img src="/hahaha/thinkphp/Public/images/right2_yearelec.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
+    						<img src="/XinNengYun/power_station/Public/images/right2_yearelec.png" style="vertical-align: middle;width:100%;max-width:80px;padding-top:5px;">
     					</div>
     					<div class="right2_div6">
     						<div>
@@ -546,12 +546,12 @@
     </div>
     </div>
 
-    <script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.min.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/echarts.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/bootstrap.min.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/sidebar.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/header_public.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/power_station_monitor.js"></script>
+    <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/echarts.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/bootstrap.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/sidebar.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/header_public.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/power_station_monitor.js"></script>
     
   </body>
 </html>

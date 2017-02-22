@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>数据可视化</title>
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/main.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/menu.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/power_station_monitor.css">
-    <link type="image/x-icon" rel="shortcut icon" href="/hahaha/thinkphp/Public/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/main.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/menu.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/power_station_monitor.css">
+    <link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/jquery.datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/jquery.datetimepicker.css">
     
     <style type="text/css">
       .troublealarm_table1c{
@@ -414,11 +414,11 @@
     </div>
     </div>
 
-    <script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.min.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/jquery.datetimepicker.full.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/bootstrap.min.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/sidebar.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/header_public.js"></script>
-    <script type="text/javascript" src="/hahaha/thinkphp/Public/script/station/running_log.js"></script>
+    <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/jquery.datetimepicker.full.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/bootstrap.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/sidebar.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/header_public.js"></script>
+    <script type="text/javascript" src="/XinNengYun/power_station/Public/script/station/running_log.js"></script>
   </body>
 </html>

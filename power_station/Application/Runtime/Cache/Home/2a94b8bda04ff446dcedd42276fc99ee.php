@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/main.css">
-	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert.css">
-	<link type="image/x-icon" rel="shortcut icon" href="/hahaha/thinkphp/Public/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/main.css">
+	<link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/sweetalert-master/dist/sweetalert.css">
+	<link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
 
 	<title>新能云</title>
 </head>
 <body>
 	<div id="div1">
-		<img src="/hahaha/thinkphp/Public/images/bg.jpg">
+		<img src="/XinNengYun/power_station/Public/images/bg.jpg">
 	</div>
 	<div id="div2">
 		<span>新能云集中监控系统</span>
@@ -30,7 +30,7 @@
 			</div>
 			<div  class="content_body">
 				<div style="height:100px">
-					<img src="/hahaha/thinkphp/Public/images/dailybg.jpg" style="height:100%;width:100%">
+					<img src="/XinNengYun/power_station/Public/images/dailybg.jpg" style="height:100%;width:100%">
 				</div>
 				<div style="line-height:40px;border-bottom:1px solid rgba(0,0,0,4)">
 					<span style="margin-right:5px">运行状态</span>
@@ -68,14 +68,14 @@
 	<div class="mapleft">
 		<div class="left1">
 			<div style="width:200px;height:60px;position:absolute;left:50%;top:50%;margin:-30px 0 0 -100px">
-				<img id="logo_left" src="/hahaha/thinkphp/Public/images/pc_header_logo.png">
+				<img id="logo_left" src="/XinNengYun/power_station/Public/images/pc_header_logo.png">
 				<span style="font-size:20px;text-align:center;margin-left:22px;margin-top:21px;float:left">新能源演示</span>
 			</div>
 		</div>
 
 		<div class="left2">
 			<div>
-				<p class="left2_p1 my_h4" style="background: url(/hahaha/thinkphp/Public/images/ico_poweNum.png) no-repeat left center;">电站数量</p>
+				<p class="left2_p1 my_h4" style="background: url(/XinNengYun/power_station/Public/images/ico_poweNum.png) no-repeat left center;">电站数量</p>
 				<span id="station_number" ng-bind="MonitorData.powerStationNum|dataNullFilter" class="my_h2 ng-binding">18</span>
 				<p style="margin-top:5px">
 					<span  class="my_h4">总装机量</span>
@@ -87,7 +87,7 @@
 
 		<div class="left3">
 			<div>
-				<p class="my_h4"><img src="/hahaha/thinkphp/Public/images/blok1.png" width="25">  实时功率</p>
+				<p class="my_h4"><img src="/XinNengYun/power_station/Public/images/blok1.png" width="25">  实时功率</p>
 				<div style="margin-top:5px">
 					<span id="real_time_power" class="my_h2">0</span> <span class="my_h5">kW</span>
 					<span class="my_h5" style="margin-left:160px">0%</span>
@@ -162,18 +162,18 @@
 	<!--head-->
 	<ul class="map_header list-inline">
 		<li>
-			<i class="expendScreen" style="background-image: url(/hahaha/thinkphp/Public/images/ico_fullScreen.png);"></i>
+			<i class="expendScreen" style="background-image: url(/XinNengYun/power_station/Public/images/ico_fullScreen.png);"></i>
 			<i id="resize-small" class="fa fa-compress text-active" style="vertical-align: middle;display:none"> </i>
 		</li>
 		<li>
-			<i class="lockScreen" style="background-image: url(/hahaha/thinkphp/Public/images/ico_lockScreen.png)"></i>
+			<i class="lockScreen" style="background-image: url(/XinNengYun/power_station/Public/images/ico_lockScreen.png)"></i>
 		</li>
 		<li>
-			<i class="ico_power" style="background-image: url(/hahaha/thinkphp/Public/images/ico_power.png)"></i>
+			<i class="ico_power" style="background-image: url(/XinNengYun/power_station/Public/images/ico_power.png)"></i>
 			<span class="qihuan">切换</span>
 		</li>
 		<li class="dropdown">
-			<i class="ico_user" style="background-image: url(/hahaha/thinkphp/Public/images/ico_user.png)"></i>
+			<i class="ico_user" style="background-image: url(/XinNengYun/power_station/Public/images/ico_user.png)"></i>
 			<span class="yanshi" style="text-align:center">演示用户</span>
 			<b class="down"></b>
 			<ul class="dropdown_menu">
@@ -400,7 +400,7 @@
         						<span>全选</span>
         					</div>
         					<div class="pull-left"><a class="delete-all" >删除</a></div>
-        					<div class="pull-left"><span class="add-group" ><img src="/hahaha/thinkphp/Public/images/add-group.png"></span><span>添加电站</span></div>
+        					<div class="pull-left"><span class="add-group" ><img src="/XinNengYun/power_station/Public/images/add-group.png"></span><span>添加电站</span></div>
         				</div>
      			 	</div>
       				<div class="modal-body" >
@@ -481,53 +481,53 @@
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="angular-animate.js"></script>
 	-->
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
 
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/dist/echarts.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/china.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/北京.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/江苏.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/安徽.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/澳门.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/dist/echarts.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/china.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/北京.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/江苏.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/安徽.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/澳门.js"></script>
 
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/福建.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/甘肃.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/广东.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/广西.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/贵州.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/海南.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/河北.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/河南.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/福建.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/甘肃.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/广东.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/广西.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/贵州.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/海南.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/河北.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/河南.js"></script>
 
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/黑龙江.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/湖北.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/湖南.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/吉林.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/江西.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/辽宁.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/内蒙古.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/宁夏.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/黑龙江.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/湖北.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/湖南.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/吉林.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/江西.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/辽宁.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/内蒙古.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/宁夏.js"></script>
 
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/青海.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/山东.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/山西.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/山西1.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/上海.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/四川.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/台湾.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/天津.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/青海.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/山东.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/山西.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/山西1.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/上海.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/四川.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/台湾.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/天津.js"></script>
 
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/西藏.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/香港.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/新疆.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/云南.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/浙江.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/echarts/province/重庆.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/西藏.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/香港.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/新疆.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/云南.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/浙江.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/echarts/province/重庆.js"></script>
 
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/script/test_map.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/script/event.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert.min.js"></script>
-	<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert-dev.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/script/test_map.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/script/event.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/sweetalert-master/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/sweetalert-master/dist/sweetalert-dev.js"></script>
 </body>
 </head>

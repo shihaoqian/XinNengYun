@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>数据可视化</title>
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/main.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/sidebar-menu.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/menu.css">
-    <link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/style/station/power_station_monitor.css">
-    <link type="image/x-icon" rel="shortcut icon" href="/hahaha/thinkphp/Public/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/main.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/menu.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/power_station_monitor.css">
+    <link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
   </head>
   <body>
     
@@ -213,69 +213,73 @@
         </div>
     </div>
 </div>
-
-
-
-
-
     <!-- 左侧菜单栏 -->
    <div id="left">
-      <aside class="main-sidebar">
-      <section class="sidebar">
-          <ul class="sidebar-menu">
-            <li class="treeview">
-              <a href="#">
-                <span>消息中心</span> <i class="fa fa-angle-right pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/news_list"><span class="glyphicon glyphicon-calendar"></span> &nbsp;消息列表</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <span>监控视图</span> <i class="fa fa-angle-right pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/power_station_monitor"><span class="glyphicon glyphicon-eye-open"></span> &nbsp;电站监控</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/layout_view"><span class="glyphicon glyphicon-th"></span> &nbsp;布局视图</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/list_view"><span class="glyphicon glyphicon-align-justify"></span> &nbsp;列表视图</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/trouble_alarm"><span class="glyphicon glyphicon-bell"></span> &nbsp;故障报警</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/running_log"><span class="glyphicon glyphicon-list"></span> &nbsp;运行日志</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/history_data_query"><span class="glyphicon glyphicon-repeat"></span> &nbsp;历史数据查询</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/power_station_trend"><span class="glyphicon glyphicon-text-height"></span> &nbsp;电站功率曲线</a></li>
-                <li><a href="http://localhost:8080/hahaha/thinkphp/Home/Station/device_power_trend"><span class="glyphicon glyphicon-text-height"></span> &nbsp;设备功率曲线</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <span>分析视图</span> <i class="fa fa-angle-right pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="//127.0.0.1/dataweb/overview.php"><span class="glyphicon glyphicon-stats"></span> &nbsp;概览</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <span>管理视图</span> <i class="fa fa-angle-right pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-usd"></span> &nbsp;电费结算</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> &nbsp;运维支出</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> &nbsp;生产计划</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <span>台帐视图</span> <i class="fa fa-angle-right pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-home"></span> &nbsp;电站台帐</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-cog"></span> &nbsp;运行配置</a></li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-       </aside>
+            <div id="sidebar">
+        <ul class="sidebar-menu">
+          <li class="treeview">
+            <a class="treeview-item"href="#">
+              消息中心
+              <i class="fa fa-caret-right active-right"></i>
+            </a>
+            <ul class="treeview-menu none">
+              <li><a href="#"><i class="fa fa-calendar icon"></i>消息列表</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a class="treeview-item"href="#">
+              监控视图
+              <i class="fa fa-caret-right active-right"></i>
+            </a>
+            <ul class="treeview-menu none"style="">
+              <li><a href="power_station_monitor"><i class="fa fa-dashboard fa-fw icon"></i>电站监控</a></li>
+              <li><a href="layout_view"><i class="fa fa-th-list fa-fw icon"></i>布局视图</a></li>
+              <li><a href="list_view"><i class="fa fa-reorder fa-fw icon"></i>列表视图</a></li>
+              <li><a href="trouble_alarm"><i class="fa fa-bell fa-fw icon"></i>故障报警</a></li>
+              <li><a href="running_log"><i class="fa fa-list-ol fa-fw icon"></i>运行日志</a></li>
+              <li><a href="history_data_query"><i class="fa fa-history fa-fw icon"></i>历史数据查询</a></li>
+              <li><a href="power_station_trend"><i class="fa fa-area-chart fa-fw icon"></i>电站功率趋势图</a></li>
+              <li><a href="device_power_trend"><i class="fa fa-line-chart fa-fw icon"></i>设备功率趋势图</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a class="treeview-item"href="#">
+              分析视图
+              <i class="fa fa-caret-right active-right"></i>
+            </a>
+            <ul class="treeview-menu none">
+              <li><a href="<?php echo U('AnalysisView/overview');?>"><i class="fa fa-th-large fa-fw icon"></i>概览</a></li>
+              <li><a href="<?php echo U('AnalysisView/powerGeneration');?>"><i class="fa fa-bar-chart-o fa-fw icon"></i>发电量</a></li>
+              <li><a href="#"><i class="fa fa-tint fa-fw icon"></i>气象资讯</a></li>
+              <li><a href="#"><i class="fa fa-wrench fa-fw icon"></i>故障统计</a></li>
+              <li><a href="#"><i class="fa fa-cog fa-fw icon"></i>设备性能</a></li>
+              <li><a href="#"><i class="fa fa-ge fa-fw icon"></i>综合评估</a></li>
+              <li><a href="#"><i class="fa fa-sort-numeric-asc fa-fw icon"></i>排名</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a class="treeview-item"href="#">
+              管理视图
+              <i class="fa fa-caret-right active-right"></i>
+            </a>
+            <ul class="treeview-menu none">
+              <li><a href="#"><i class="fa fa-yen fa-fw icon"></i>电费结算</a></li>
+              <li><a href="#"><i class="fa fa-credit-card fa-fw icon"></i>运维支出</a></li>
+              <li><a href="#"><i class="fa fa-cogs fa-fw icon"></i>生产计划</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a class="treeview-item"href="#">
+              台帐视图
+              <i class="fa fa-caret-right active-right"></i>
+            </a>
+            <ul class="treeview-menu none">
+              <li><a href="#"><i class="fa fa-university fa-fw icon"></i>电站台帐</a></li>
+              <li><a href="#"><i class="fa fa-anchor  fa-fw icon"></i>运行配置</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- 主要内容 -->
@@ -342,7 +346,7 @@
                 <div style="float:right;">
                     <ul class="list_view_ul">
                         <li>
-                          <img style="cursor:pointer;" src="/hahaha/thinkphp/Public/images/button_left.png">
+                          <img style="cursor:pointer;" src="/XinNengYun/power_station/Public/images/button_left.png">
                         </li>
                         <li>
                           <input type="text" name="" class="listview_shuru2">
@@ -351,7 +355,7 @@
                           <a href="" class="listview_a">跳转</a>
                         </li>
                         <li>
-                          <img style="cursor:pointer;" src="/hahaha/thinkphp/Public/images/button_right.png">
+                          <img style="cursor:pointer;" src="/XinNengYun/power_station/Public/images/button_right.png">
                         </li>
                     </ul>
                     <span style="float:right;">
@@ -376,23 +380,16 @@
             </div>
 
         </div>
-
-        
-          
-
         </div>
 
     </div>
     </div>
-
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/bootstrap.min.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/sidebar-menu.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/header_public.js"></script>
-        <script>
-      $.sidebarMenu($('.sidebar-menu'))
-    </script>
-    <script src="/hahaha/thinkphp/Public/script/station/mmGrid.js"></script>
-    <script src="/hahaha/thinkphp/Public/script/station/listview_table.js"></script>
+    
+    <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/sidebar.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/header_public.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/mmGrid.js"></script>
+    <script src="/XinNengYun/power_station/Public/script/station/listview_table.js"></script>
   </body>
 </html>
