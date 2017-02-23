@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据可视化</title> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/analysisView/analyData.css">
+  </head>
+  <body>
+    
+    <!-- 顶部菜单栏 -->
+    <div id="top">
+      <include file="Common/topbar" />
+    </div>
+    <include file="Common/tophidden" />
+    <!-- 左侧菜单栏 -->
+    <div id="left">
+      <include file='Common/left' />
+    </div>
+
+    <div class="analysisView" id="right">
+      <div class="container-fluid no-padding">
+
+        <!-- 主内容标题栏 -->
+        <div class="col-sm-12 overview-title">
+          <div class="pull-left overview-title-font">
+            <span>龙游瑞源光伏电站</span>
+            <span style="cursor:pointer;color: #428bca; font-size: 13px;">[切换]</span>
+            <span style="padding-left: 10px"><img src="__PUBLIC__/images/date.png">
+              <span id="title-day" class="overview-title-time">日</span>
+              <span id="title-month" class="overview-title-time title-time-active">月</span>
+              <span id="title-year" class="overview-title-time">年</span>
+              <span id="title-total" class="overview-title-time">累计</span>
+            </span>
+          </div>
+        </div>
+
+        <div id="main-content" class="col-sm-12 powerGeneration">
+          <!-- 添加自己内容 -->
+          <div class="clearfix">
+            <div class="col-sm-4" style="padding: 10px 5px;">
+              <span class="square" style="background-color: #8c2967;">应发电量 42.452万度</span>
+            </div>
+            <div class="col-sm-4" style="padding: 10px 5px;">
+              <span class="square" style="background-color: #f56669;">实际发电量 42.452万度</span>
+            </div>
+            <div class="col-sm-4" style="padding: 10px 5px;">
+              <span class="square" style="background-color: #ff6700;">上网电量 42.452万度</span>
+            </div>
+          </div>
+
+          <div class="row row-xs" style="background-color: #FFF; margin: 0 5px;">
+            <div class="col-sm-12 panel no-margin" style=" min-height: 450px; height: 100%;">
+              <div style="padding: 15px;">
+                <div id="powerChartView" >
+                  <span class="pull-right">
+                    <span class="m-r-xs">
+                      <i class="fa fa-circle m-r-xs" style="color:#8c2967"></i>
+                      应发电量
+                    </span>
+                    <span class="m-r-xs">
+                      <i class="fa fa-circle m-r-xs" style="color:#f56669"></i>
+                      实际发电量
+                    </span>
+                    <span class="m-r-xs">
+                      <i class="fa fa-circle m-r-xs" style="color:#ff6700"></i>
+                      上网电量
+                    </span>
+                    <span class="m-r-xs">
+                      <i class="m-r-xs" style="color:rgb(87,92,209)">...</i>
+                      月计划完成率
+                    </span>
+                    <button class="btn btn-sm btn-info" id="powerChartBtn" style="z-index: 777">数据表格</button>
+                  </span>
+                  <div id="powerChart" style="width: 100%;height:670px; "></div>
+                </div>
+
+                <div id="powerTableView" class="hidden">
+                  <span class="pull-right">
+                    <button class="btn btn-sm btn-info" id="powerTableBtn">数据图表</button>
+                  </span>
+                  <div id="powerTable">
+                    <table class="table table-striped b-light">
+                      <thead>
+                        <tr>
+                          <th class="text-center">日期</th>
+                          <th class="text-center">应发电量(kwh)</th>
+                          <th class="text-center">实际发电量(kwh)</th>
+                          <th class="text-center">上网电量(kwh)</th>
+                          <th class="text-center">计划发电量(kwh)</th>
+                          <th class="text-center">计划完成率(%)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">2017-02-01</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                          <td class="text-center">4487</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>           
+          </div>
+
+        </div><!-- main-content -->
+      </div><!-- right -->
+    </div><!-- body -->
+    <script src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+    <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
+    <script type="text/javascript">
+      var days = ['01','02','03','04','05','06','07','08','09','10',
+                  '11','12','13','14','15','16','17','18','19','20'];
+      var actualPower = ['4487','10159.2','15034','11245.8','8222.7','33451.9','19669.1',
+                        '5487','13159.2','5034','11245.8','8222.7','33451.9','19669.1',
+                        '4487','10159.2','15034','11245.8','8222.7','33451.9'];
+      var demandPower = ['4493.1','9462.3','13765.9','9980.8','3487.6','30393.8','18741.2',
+                        '5493.1','12462.3','3765.9','9980.8','3487.6','30393.8','18741.2',
+                        '4493.1','9462.3','13765.9','9980.8','3487.6','30393.8'];
+      var netPower = [];
+      var  powerChart= echarts.init(document.getElementById('powerChart'));
+      var option = {
+        tooltip : {
+          trigger: 'axis',
+          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'line',// 默认为直线，可选为：'line' | 'shadow'
+            lineStyle: {
+               color: '#c3c3c3',
+            }
+          }
+        },
+        grid: {
+          left: 60,
+          right: 60,
+          botton: 0,
+        },
+        xAxis: {
+          type: 'category',
+          data: days,
+          axisLine: {
+            lineStyle: {
+              color: '#C2C2C2'
+            }
+          },
+          axisTick: [{
+              show: 'false',
+              alignWithLabel: 'true'
+          }]
+        },
+        yAxis: [
+          {
+            type: 'value',
+            name: 'kWh',
+            min: '0',
+            max: '800000',
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+              show: 'false',
+              alignWithLabel: 'true'
+            }],
+            splitLine: [{
+              show: 'false',
+            }],
+
+          },
+          {
+            type: 'value',
+            name: '%',
+            min: '0',
+            max: '5',
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+              show: 'false',
+              alignWithLabel: 'true'
+            }],
+            splitLine: [{
+              show: 'false',
+            }],
+
+          },
+        ],
+        series: [
+          {
+              name: '实际发电量',
+              type: 'bar',
+              barWidth: '15px',
+              data: actualPower,
+              itemStyle:{  
+                normal:{color:'#fe9700'},
+                emphasis:{color:'#feb64c'}  
+              }  
+          },
+          {
+              name: '应发电量',
+              type: 'bar',
+              barWidth: '15px',
+              barGap: '-100%',
+              data: demandPower,
+              // itemStyle:{  
+              //   normal:{color:'#fe9700'},
+              //   emphasis:{color:'#feb64c'}  
+              // }  
+          }
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      powerChart.setOption(option);
+
+      setTimeout(function (){
+        window.onresize = function () {
+            powerChart.resize();
+        }
+      },200)
+    </script>
+    <script type="text/javascript">
+      //图表切换
+      $("#powerChartBtn").click(function() {
+        $("#powerChartView").addClass('hidden');
+        $("#powerTableView").removeClass("hidden");
+      });
+      $("#powerTableBtn").click(function() {
+        $("#powerChartView").removeClass('hidden');
+        $("#powerTableView").addClass("hidden");
+      });
+    </script>   
+  </body>
+
+</html>

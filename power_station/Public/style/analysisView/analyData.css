@@ -1,0 +1,191 @@
+body {
+    background-color: #F0F3F4;
+    font-family: "Source Sans Pro",Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    line-height: 1.42857;
+}
+
+.analysisView {
+    background-color: #F0F3F4;
+}
+
+.overview {
+    background-color: #FFF;
+}
+
+.overview-title {
+    background: rgb(249, 250, 252) none repeat scroll 0 0;
+    border-bottom: 1px solid rgb(227, 228, 229);
+    line-height: 60px;
+    
+}
+
+.overview-title-font {
+    font-size: 16px; 
+    padding-left: 10px;
+}
+
+.overview-title-time {
+    padding: 0 5px;
+    font-size: 13px;
+}
+
+.title-time-active {
+    color: #06BEBD;
+    border-bottom: 1px solid #06BEBD;
+}
+
+/*
+    以下是overview中的css
+*/
+.img {
+    height: 221px;
+    width: 100%;
+}
+
+.anaWea {
+    color: #fff;
+    font-size: 14px;
+    padding: 0px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.anaWea .clearfix {
+    font-size: 13px;
+}
+
+.sunny-days {
+    font-size: 15px;
+    margin: 14px 0 27px;
+}
+
+.sunny-time {
+    margin-right: 2em;
+}
+
+.weather-paracon {
+    background: rgb(248, 249, 250) none repeat scroll 0 0;
+    border-left: 1px solid rgb(232, 232, 232);
+    border-right: 1px solid rgb(232, 232, 232);
+    padding-left: 0;
+}
+
+.weather-para {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    border-right: 1px solid rgb(232, 232, 232);
+    float: left;
+    line-height: 42px;
+    list-style: outside none none;
+    padding: 0 5px;
+    width: 33.333%;
+    font-size: 13px;
+    font-family: "Source Sans Pro";
+}
+
+.weather-para .num {
+    margin-left: 6px;
+}
+
+.weather-para img {
+    width: 20px;
+}
+
+.up-right {
+    padding: 18px;
+}
+
+.up-right .half-height {
+    height: 50%;
+}
+
+.up-right .right-title {
+    font-size: 15px; 
+    margin-bottom: 25px;
+} 
+.up-right .right-font {
+    font-size: 16px; 
+}
+
+.up-right .right-num {
+    font-size: 24px;
+}
+
+.below {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    margin-bottom: 15px;
+}
+
+.up-right .item {
+    background: rgb(248, 249, 250) none repeat scroll 0 0;
+    border: 1px solid rgb(232, 232, 232);
+    height: 270px;
+}
+.item {
+    padding: 25px 10px;
+}
+
+.main-padding {
+    padding: 20px 20px 20px 25px;
+}
+
+.padding-left-right {
+    padding: 0px 10px;
+}
+
+.no-margin {
+    margin: 0 !important; 
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.m-r-xs {
+    margin-right: 5px;
+}
+
+.red {
+    color: rgb(216, 65, 47);
+}
+.green {
+    color: #1caf9a;
+}
+
+.b-light {
+    border-color: #edf1f2;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #e5e5e5;
+    color: #1caf9a;
+    padding: 12px 15px;
+}
+.table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #eaeff0;
+    color: #666;
+    padding: 8px 15px;
+}
+
+/*
+    以下是powerGeneration中的css
+*/
+
+.powerGeneration {
+    background-color: #F0F3F4;
+    padding-bottom: 50px;
+}
+
+.square {
+    color: white;
+    font-size: 14px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    display: block;
+}

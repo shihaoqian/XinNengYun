@@ -3,49 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>新能云</title>
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/topbar.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/main.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/analyData.css">
+    <title>数据可视化</title> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/analysisView/analyData.css">
   </head>
   <body>
     
     <!-- 顶部菜单栏 -->
     <div id="top">
-      <nav class="navbar navbar-default" style="height: 50px; background-color: rgb(255,255,255);">
-        <div class="container-fluid" style="text-align: center;">
-          <div class="headerName">新能云集中监控系统</div>
-          <div class="navbar-header" style="">
-            <a class="navbar-brand" href="#">
-              <p><img alt="brand" style="width: 25px;height: 25px;" src="__PUBLIC__/images/pc_header_logo.png" > &nbsp;新能云</p>
-            </a>
-          </div>
-
-          <!-- 组件 -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="float: right;">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#">首页</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  用户名<span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">电站组管理</a></li>
-                  <li><a href="#">个人信息</a></li>
-                  <li><a href="#">修改密码</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">退出系统</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <include file="Common/topbar" />
     </div>
+    <include file="Common/tophidden" />
     <!-- 左侧菜单栏 -->
     <div id="left">
       <include file='Common/left' />
@@ -64,12 +38,6 @@
               <span id="title-month" class="overview-title-time title-time-active">月</span>
               <span id="title-year" class="overview-title-time">年</span>
               <span id="title-total" class="overview-title-time">累计</span>
-              <span>
-                <div class="input-append date form_datetime">
-                  <input size="16" type="text" value="" readonly>
-                  <span class="add-on"><i class="icon-th"></i></span>
-                </div>
-              </span>
             </span>
           </div>
         </div>
@@ -303,10 +271,10 @@
 
       </div>
     </div>
-    <script src="__PUBLIC__/js/jquery-3.1.1.js"></script>
-    <script src="__PUBLIC__/js/bootstrap.js"></script>
-    <script src="__PUBLIC__/js/sidebar.js"></script>
-    <script src="__PUBLIC__/js/echarts.js"></script>
+    <script src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
     <script type="text/javascript">
       //日期
       var days = ['01','02','03','04','05','06','07','08','09','10',
@@ -438,7 +406,7 @@
         }
       },200)
     </script>
-    <script src="__PUBLIC__/js/radialIndicator.js"></script>
+    <script src="__PUBLIC__/script/analysisView/radialIndicator.js"></script>
     <script type="text/javascript">
       //进度条
       $('#PBA').radialIndicator({
@@ -472,6 +440,7 @@
         $("#kwhChart").addClass("hidden");
       });
     </script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
     <script src="__PUBLIC__/js/bootstrap-datetimepicker.min.js"></script>
     <script src="__PUBLIC__/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script type="text/javascript">

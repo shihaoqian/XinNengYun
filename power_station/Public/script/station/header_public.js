@@ -33,7 +33,16 @@ show_station_name();
 		$('#expendScreen').click(function(){
 			//alert(1);
 			var docElm = document.documentElement;
-			 docElm.webkitRequestFullScreen(); 
+			 //docElm.webkitRequestFullScreen(); 
+			 if(docElm.requestFullscreen) {
+			    docElm.requestFullscreen();
+			  } else if(docElm.mozRequestFullScreen) {
+			    docElm.mozRequestFullScreen();
+			  } else if(docElm.webkitRequestFullscreen) {
+			    docElm.webkitRequestFullscreen();
+			  } else if(docElm.msRequestFullscreen) {
+			    docElm.msRequestFullscreen();
+			  }
 			 $('#resize-small').css('display','inline-block').css('cursor','pointer');
 			 $('#expendScreen').css('display','none');
 		});
@@ -45,7 +54,14 @@ show_station_name();
 			 }
 		});
 		$('#resize-small').click(function(){
-			document.webkitCancelFullScreen(); 
+			//document.webkitCancelFullScreen(); 
+			if(document.exitFullscreen) {
+			    document.exitFullscreen();
+			  } else if(document.mozCancelFullScreen) {
+			    document.mozCancelFullScreen();
+			  } else if(document.webkitExitFullscreen) {
+			    document.webkitExitFullscreen();
+			  }
 			$('#resize-small').css('display','none');
 			$('#expendScreen').css('display','inline-block');
 		});
