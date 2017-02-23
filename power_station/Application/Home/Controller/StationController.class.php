@@ -55,6 +55,13 @@ class StationController extends Controller {
        $result=$chart->where($map)->select();
        $this->ajaxReturn($result);
     }
+    public function station_name(){
+        session_start();
+        $_SESSION['station_name']=$_POST["station_name"];  
+    }
+    public function get_station_name(){
+        echo $_SESSION['station_name'];
+    }
     public function overview(){
         $this->display();
     }

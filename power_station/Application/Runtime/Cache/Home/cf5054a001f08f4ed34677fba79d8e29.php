@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert.css">
-	<link type="image/x-icon" rel="shortcut icon" href="/hahaha/thinkphp/Public/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/sweetalert-master/dist/sweetalert.css">
+	<link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
 	<title>新能源系统登陆</title>
 </head>
 <body style="background-color:#1c2b36;color:rgb(51, 51, 51);width:100%;height:100%">
@@ -17,9 +17,9 @@
       </span>
     </div>
 </body>
-<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/Jquery/jquery.form.js"></script>
-<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="/hahaha/thinkphp/Public/Static/sweetalert-master/dist/sweetalert-dev.js"></script>
-<script type="text/javascript" src="/hahaha/thinkphp/Public/script/LockScreen.js"></script>
+<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.form.js"></script>
+<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/sweetalert-master/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="/XinNengYun/power_station/Public/Static/sweetalert-master/dist/sweetalert-dev.js"></script>
+<script type="text/javascript" src="/XinNengYun/power_station/Public/script/LockScreen.js"></script>
 </html>

@@ -208,7 +208,7 @@
                             <span>全选</span>
                         </div>
                         <div class="pull-left"><a class="delete-all" >删除</a></div>
-                        <div class="pull-left"><span class="add-group" ><img src="http://localhost:8080/hahaha/thinkphp/Public/images/add-group.png"></span><span>添加电站</span></div>
+                        <div class="pull-left"><span class="add-group" ><img src="/XinNengYun/power_station/Public/images/add-group.png"></span><span>添加电站</span></div>
                     </div>
                 </div>
                 <div class="modal-body" >
@@ -267,32 +267,32 @@
             <div id="sidebar">
         <ul class="sidebar-menu">
           <li class="treeview">
-            <a class="treeview-item"href="#">
+            <a class="treeview-item" href="#">
               消息中心
               <i class="fa fa-caret-right active-right"></i>
             </a>
             <ul class="treeview-menu none">
-              <li><a href="#"><i class="fa fa-calendar icon"></i>消息列表</a></li>
+              <li><a href="news_list"><i class="fa fa-calendar icon"></i>消息列表</a></li>
             </ul>
           </li>
           <li class="treeview">
-            <a class="treeview-item"href="#">
+            <a class="treeview-item" href="#">
               监控视图
               <i class="fa fa-caret-right active-right"></i>
             </a>
             <ul class="treeview-menu none"style="">
-              <li><a href="power_station_monitor"><i class="fa fa-dashboard fa-fw icon"></i>电站监控</a></li>
-              <li><a href="layout_view"><i class="fa fa-th-list fa-fw icon"></i>布局视图</a></li>
-              <li><a href="list_view"><i class="fa fa-reorder fa-fw icon"></i>列表视图</a></li>
-              <li><a href="trouble_alarm"><i class="fa fa-bell fa-fw icon"></i>故障报警</a></li>
-              <li><a href="running_log"><i class="fa fa-list-ol fa-fw icon"></i>运行日志</a></li>
-              <li><a href="history_data_query"><i class="fa fa-history fa-fw icon"></i>历史数据查询</a></li>
-              <li><a href="power_station_trend"><i class="fa fa-area-chart fa-fw icon"></i>电站功率趋势图</a></li>
-              <li><a href="device_power_trend"><i class="fa fa-line-chart fa-fw icon"></i>设备功率趋势图</a></li>
+              <li><a href="<?php echo U('Station/power_station_monitor');?>"><i class="fa fa-dashboard fa-fw icon"></i>电站监控</a></li>
+              <li><a href="<?php echo U('Station/layout_view');?>"><i class="fa fa-th-list fa-fw icon"></i>布局视图</a></li>
+              <li><a href="<?php echo U('Station/list_view');?>"><i class="fa fa-reorder fa-fw icon"></i>列表视图</a></li>
+              <li><a href="<?php echo U('Station/trouble_alarm');?>"><i class="fa fa-bell fa-fw icon"></i>故障报警</a></li>
+              <li><a href="<?php echo U('Station/running_log');?>"><i class="fa fa-list-ol fa-fw icon"></i>运行日志</a></li>
+              <li><a href="<?php echo U('Station/history_data_query');?>"><i class="fa fa-history fa-fw icon"></i>历史数据查询</a></li>
+              <li><a href="<?php echo U('Station/power_station_trend');?>"><i class="fa fa-area-chart fa-fw icon"></i>电站功率趋势图</a></li>
+              <li><a href="<?php echo U('Station/device_power_trend');?>"><i class="fa fa-line-chart fa-fw icon"></i>设备功率趋势图</a></li>
             </ul>
           </li>
           <li class="treeview">
-            <a class="treeview-item"href="#">
+            <a class="treeview-item" href="#">
               分析视图
               <i class="fa fa-caret-right active-right"></i>
             </a>
@@ -307,7 +307,7 @@
             </ul>
           </li>
           <li class="treeview">
-            <a class="treeview-item"href="#">
+            <a class="treeview-item" href="#">
               管理视图
               <i class="fa fa-caret-right active-right"></i>
             </a>
@@ -318,7 +318,7 @@
             </ul>
           </li>
           <li class="treeview">
-            <a class="treeview-item"href="#">
+            <a class="treeview-item" href="#">
               台帐视图
               <i class="fa fa-caret-right active-right"></i>
             </a>
@@ -336,7 +336,7 @@
     <div class="right_d">
     	<!-- 布局视图的标题 -->
     	<div class="lv_title1">
-            <span style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
+            <span id="s_name" style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
             <span style="cursor:pointer;color:#428bca;">[切换]</span>
         
         </div>
@@ -396,11 +396,9 @@
      }
     </script>
     <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
-    <script src="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
-    <script src="/XinNengYun/power_station/Public/script/station/jquery.datetimepicker.full.js"></script>
+    <script type="text/javascript" src="/XinNengYun/power_station/Public/script/station/jquery.datetimepicker.full.js"></script>
+    <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/XinNengYun/power_station/Public/script/station/running_log.js"></script>
-    <script src="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>    
     <script src="/XinNengYun/power_station/Public/script/station/sidebar.js"></script>
     <script src="/XinNengYun/power_station/Public/script/station/header_public.js"></script>
   </body>

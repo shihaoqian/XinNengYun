@@ -24,12 +24,22 @@
         { title:'DC发电量(Wh)', name:'DCdianliang' , align:'center',type:'number', sortable: true, renderer: fixed2}
     ];
     //客户端排序示例
+     var grid=$('#table3-1').mmGrid({
+					cols: cols3,
+					items: items,
+			        sortName: 'bianhao',
+			        sortStatus: 'asc',
+			        height:700,
+			        fullWidthRows:true
+				    });
+
+
 
 	$('.cop').tooltip();
 	$('.cop').click(function(){
 		$('#ZL').css('display','none');
 		$('.biaoge2').css('display','block');
-		console.log($(this).attr('data-original-title'));
+		//console.log($(this).attr('data-original-title'));
 		$.ajax({
 		        type: "POST",
 		        url: "zl_info",
@@ -38,6 +48,7 @@
 		        async:false,
 		        success:function(data){
 		            if(data!=null){
+		            	items=[];
 		                for(var i=0;i<data.length;i++){
 			                //console.log(data[i]);
 			                items[i]={};
@@ -49,15 +60,9 @@
 			                items[i].DCdianliang=Number(data[i]['energy']);
 		                }
 		            }
-		            $('#table3-1').mmGrid({
-						cols: cols3,
-						items: items,
-				        sortName: 'bianhao',
-				        sortStatus: 'asc',
-				        height:'100%',
-				        fullWidthRows:true
-  				    });
-		        }
+		         //
+		         grid.load(items);
+		     }
     	});
 	});
 	$('.b_back').click(function(){

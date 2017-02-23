@@ -62,6 +62,17 @@ window.setInterval(update_overview_info,10000);
 
 ($(function(){
 
+		$('#go_to').click(function(){
+			$.ajax({
+				type: "POST",
+				url: "../Station/station_name",
+				async:false,
+				data:{'station_name':$('#dianzhan_name').text()},
+				success:function(data){
+				}
+			});
+		})
+
 		//退出全屏
 		$('.expendScreen').click(function(){
 			//alert(1);

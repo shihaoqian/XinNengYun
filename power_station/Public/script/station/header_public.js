@@ -4,7 +4,7 @@ var checkbox_value =new Array();      //用来保存chechbox的值，设计为�
 function show_name(){
 	$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/hahaha/thinkphp/Home/Index/user_name",
+				url: "../Index/user_name",
 				async:false,
 				success:function(data){
 					 $('.yanshi').html(data);
@@ -12,8 +12,20 @@ function show_name(){
 			});
 
 }
-show_name();
+function show_station_name(){
+	$.ajax({
+				type: "POST",
+				url: "get_station_name",
+				async:false,
+				success:function(data){
+					console.log(data);
+					 $('#s_name').html(data);
+				}
+			});
 
+}
+show_name();
+show_station_name();
 
 ($(function(){
 
@@ -68,14 +80,14 @@ show_name();
 	
 		//锁屏按钮事件
 		$('.icon-lock-open').click(function(){
-			window.location.href="http://localhost:8080/hahaha/thinkphp/Home/Index/lockScreen";
+			window.location.href="../Index/lockScreen";
 		})
 
 		//点击显示个人信息
 		$('#li_person').click(function(){
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/hahaha/thinkphp/Home/Index/per_info",
+				url: "../Index/per_info",
 				data: "",
 				success:function(data){
 					$('#userName').attr('value',data[0]['id']);
@@ -123,7 +135,7 @@ show_name();
 			var newpwdconfirm=$('#newpwdconfirm').val();		
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/hahaha/thinkphp/Home/Index/change_passwd",
+				url: "../Index/change_passwd",
 				data: {'oldpwd':oldpwd,
 						'newpwd':newpwd,
 						'newpwdconfirm':newpwdconfirm
@@ -160,7 +172,7 @@ show_name();
 		$('#li_manage').click(function(){
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/hahaha/thinkphp/Home/Index/map_info",
+				url: "../Index/map_info",
 				async:false,
 				success:function(data){
 					$('#add_group').empty();
@@ -201,7 +213,7 @@ show_name();
             //console.log(checkbox_value);
             $.ajax({
             	type: "POST",
-            	url: "http://localhost:8080/hahaha/thinkphp/Home/Index/delete_station",
+            	url: "../Index/delete_station",
             	data: {'station_name':checkbox_value},
             	success:function(data){
             		if (data==1) {
@@ -228,7 +240,7 @@ show_name();
 			var new_location=$('#new_location').val();
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/hahaha/thinkphp/Home/Index/add_station",
+				url: "../Index/add_station",
 				data:{
 						'new_name':new_name,
 						'new_location':new_location
@@ -256,11 +268,11 @@ show_name();
 			//销毁session
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/hahaha/thinkphp/Home/Index/destroy_session",
+				url: "../Index/destroy_session",
 				success:function(data){
 
 				}
 			});
-			window.location.href="http://localhost:8080/hahaha/thinkphp/Home/User/index";
+			window.location.href="../User/index";
 		})
 }))

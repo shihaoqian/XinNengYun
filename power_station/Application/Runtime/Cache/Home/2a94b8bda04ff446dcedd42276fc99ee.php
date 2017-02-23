@@ -26,7 +26,7 @@
 			<div class="content_header">
 				<button type="button" class="close_icon" onclick="close_dianzhan()">×</button>
 				<span class="content-title" id="dianzhan_name">苏州1#发电站</span>
-				<span style="font-size:14px;color:#04B1B0;margin-left:15px;cursor:pointer;box-sizing:border-box"><a style="color:#04B1B0" href="../Station/power_station_monitor">进入电站>></a></span>
+				<span  id="go_to" style="font-size:14px;color:#04B1B0;margin-left:15px;cursor:pointer;box-sizing:border-box"><a style="color:#04B1B0" href="../Station/power_station_monitor">进入电站>></a></span>
 			</div>
 			<div  class="content_body">
 				<div style="height:100px">

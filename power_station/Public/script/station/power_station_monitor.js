@@ -7,7 +7,7 @@ var date1=[];
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/hahaha/thinkphp/Home/Station/power_energy",
+        url: "power_energy",
         data: "",
         async:false,
         success:function(data){
