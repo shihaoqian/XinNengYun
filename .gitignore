@@ -1,0 +1,2 @@
+#忽略所有的Runtime目录下的文件
+power_station/Application/Runtime/
