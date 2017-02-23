@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/main.css">
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/menu.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/common/menu.css">
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/power_station_monitor.css">
     <link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
 
@@ -76,7 +76,7 @@
       </button>
     -->
       <a class="navbar-brand" href="#">
-        <p style="margin-top:-13px"><img alt="brand" src="http://localhost:8080/hahaha/thinkphp/Public/images/pc_header_logo.png" > &nbsp;新能云</p>
+        <p style="margin-top:-13px"><img alt="brand" src="/XinNengYun/power_station/Public/images/pc_header_logo.png" > &nbsp;新能云</p>
       </a>
     </div>
 

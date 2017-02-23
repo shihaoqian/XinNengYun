@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/simple-line-icons-master/css/simple-line-icons.css" >
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/main.css">
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/menu.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/common/menu.css">
     <link rel="stylesheet" type="text/css" href="/XinNengYun/power_station/Public/style/station/power_station_monitor.css">
     <link type="image/x-icon" rel="shortcut icon" href="/XinNengYun/power_station/Public/images/favicon.ico">
   </head>
@@ -31,7 +31,7 @@
       </button>
     -->
       <a class="navbar-brand" href="#">
-        <p style="margin-top:-13px"><img alt="brand" src="http://localhost:8080/hahaha/thinkphp/Public/images/pc_header_logo.png" > &nbsp;新能云</p>
+        <p style="margin-top:-13px"><img alt="brand" src="/XinNengYun/power_station/Public/images/pc_header_logo.png" > &nbsp;新能云</p>
       </a>
     </div>
 
@@ -219,64 +219,6 @@
 
     <!-- 左侧菜单栏 -->
      <div id="left">
-     <!--
-        <aside class="main-sidebar">
-            <section class="sidebar">
-              <ul class="sidebar-menu">
-                <li class="treeview">
-                  <a href="#">
-                    <span>消息中心</span> <i class="fa fa-angle-right pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="news_list"><span class="glyphicon glyphicon-calendar"></span> &nbsp;消息列表</a></li>
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#">
-                    <span>监控视图</span> <i class="fa fa-angle-right pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="power_station_monitor"><span class="glyphicon glyphicon-eye-open"></span> &nbsp;电站监控</a></li>
-                    <li><a href="layout_view"><span class="glyphicon glyphicon-th"></span> &nbsp;布局视图</a></li>
-                    <li><a href="list_view"><span class="glyphicon glyphicon-align-justify"></span> &nbsp;列表视图</a></li>
-                    <li><a href="trouble_alarm"><span class="glyphicon glyphicon-bell"></span> &nbsp;故障报警</a></li>
-                    <li><a href="running_log"><span class="glyphicon glyphicon-list"></span> &nbsp;运行日志</a></li>
-                    <li><a href="history_data_query"><span class="glyphicon glyphicon-repeat"></span> &nbsp;历史数据查询</a></li>
-                    <li><a href="power_station_trend"><span class="glyphicon glyphicon-text-height"></span> &nbsp;电站功率曲线</a></li>
-                    <li><a href="Station/device_power_trend"><span class="glyphicon glyphicon-text-height"></span> &nbsp;设备功率曲线</a></li>
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#">
-                    <span>分析视图</span> <i class="fa fa-angle-right pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="//127.0.0.1/dataweb/overview.php"><span class="glyphicon glyphicon-stats"></span> &nbsp;概览</a></li>
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#">
-                    <span>管理视图</span> <i class="fa fa-angle-right pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><span class="glyphicon glyphicon-usd"></span> &nbsp;电费结算</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> &nbsp;运维支出</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> &nbsp;生产计划</a></li>
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#">
-                    <span>台帐视图</span> <i class="fa fa-angle-right pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><span class="glyphicon glyphicon-home"></span> &nbsp;电站台帐</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span> &nbsp;运行配置</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </section>
-       </aside>
-       -->
              <div id="sidebar">
         <ul class="sidebar-menu">
           <li class="treeview">
@@ -547,8 +489,8 @@
     </div>
 
     <script type="text/javascript" src="/XinNengYun/power_station/Public/Static/Jquery/jquery.min.js"></script>
-    <script src="/XinNengYun/power_station/Public/script/station/echarts.js"></script>
-    <script src="/XinNengYun/power_station/Public/script/station/bootstrap.min.js"></script>
+    <script src="/XinNengYun/power_station/Public/Static/echarts/dist/echarts.js"></script>
+    <script src="/XinNengYun/power_station/Public/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
     <script src="/XinNengYun/power_station/Public/script/station/sidebar.js"></script>
     <script src="/XinNengYun/power_station/Public/script/station/header_public.js"></script>
     <script src="/XinNengYun/power_station/Public/script/station/power_station_monitor.js"></script>
