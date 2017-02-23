@@ -189,34 +189,28 @@
                   <span class="pull-right">
                     <span class="m-r-xs">
                       <i class="fa fa-circle m-r-xs" style="color:#fe9700"></i>
-                      实际发电量
+                      发电量
                     </span>
                     <span class="m-r-xs">
-                      <i class="fa fa-circle m-r-xs" style="color:#ffc400"></i>
-                      应发电量
+                      <i class="fa fa-circle m-r-xs" style="color:#feb64c"></i>
+                      功率
                     </span>
-                    <span class="m-r-xs">
-                      <i class="fa fa-minus m-r-xs" style="color:#6b008e"></i>
-                      月计划完成率
-                    </span>
-                    <button id="kwhChartBtn" class="btn btn-sm btn-info">数据表格 ></button>
+                    <button id="kwhChartBtn" class="btn btn-sm btn-info">数据表格</button>
                   </span>
                   <div id="kwhTotalMReport" style="width: 100%;height:440px;"></div>
                 </div>
                 <div id="kwhTable" class="hidden">
                   <span style="font-size: 14px;">发电量分析</span>
                   <span class="pull-right">
-                    <button id="kwhTableBtn" class="btn btn-sm btn-info">数据图表 ></button>
+                    <button id="kwhTableBtn" class="btn btn-sm btn-info">数据图表</button>
                   </span>
                   <table class="table table-striped b-light">
                     <thead>
                       <tr>
                         <th class="text-center">日期</th>
-                        <th class="text-center">实际发电量(kwh)</th>
-                        <th class="text-center">应发电量(kwh)</th>
+                        <th class="text-center">发电量(kwh)</th>
+                        <th class="text-center">功率(W)</th>
                         <th class="text-center">月累计发电量(kwh)</th>
-                        <th class="text-center">计划发电量(kwh)</th>
-                        <th class="text-center">计划完成率(%)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -225,20 +219,8 @@
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
                       </tr>
                       <tr>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
@@ -249,12 +231,14 @@
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
-                        <td class="text-center">4487</td>
                       </tr>
                       <tr>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
+                        <td class="text-center">4487</td>
+                        <td class="text-center">4487</td>
+                      </tr>
+                      <tr>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
                         <td class="text-center">4487</td>
@@ -277,24 +261,36 @@
     <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
     <script type="text/javascript">
       //日期
-      var days = ['01','02','03','04','05','06','07','08','09','10',
-                  '11','12','13','14','15','16','17','18','19','20'];
-
-      //实际发电量
-      var actualPower = ['4487','10159.2','15034','11245.8','8222.7','33451.9','19669.1',
-                        '5487','13159.2','5034','11245.8','8222.7','33451.9','19669.1',
-                        '4487','10159.2','15034','11245.8','8222.7','33451.9'];
-
-      //应发电量
-      var demandPower = ['4493.1','9462.3','13765.9','9980.8','3487.6','30393.8','18741.2',
-                        '5493.1','12462.3','3765.9','9980.8','3487.6','30393.8','18741.2',
-                        '4493.1','9462.3','13765.9','9980.8','3487.6','30393.8'];
+      var days = [];
+      //发电量
+      var power = [];
 
       //月计划完成率
-      var monthCompleteness = ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
-      '0','0','0','0','0','0',];
-
+      var energy = [];
+      $.ajax({
+        type: "POST",
+        url: "power_energy_month",
+        data: "",
+        async:false,
+        success:function(data){
+            //console.log(data);
+            var count = 0;
+            for (var i in data[0]) {
+              power[count++] = data[0][i];
+              //energy[count++] = data[1][i];
+            }
+            count = 0;
+            for (var i in data[1]) {
+              //power[count++] = data[1][i];
+              energy[count++] = data[1][i];
+            }
+        }
+      });
+      console.log(energy);
+      days = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22'];
       var kwhTotalMReport = echarts.init(document.getElementById('kwhTotalMReport'));
+
+
       var option = {
         tooltip : {
           trigger: 'axis',
@@ -306,11 +302,11 @@
           }
         },
         grid: {
-          left: 60,
-          right: 60,
+          left: 100,
+          right: 100,
           botton: 0,
         },
-        xAxis: {
+        xAxis: [{
           type: 'category',
           data: days,
           axisLine: {
@@ -322,13 +318,12 @@
               show: 'false',
               alignWithLabel: 'true'
           }]
-        },
+        }],
         yAxis: [
           {
             type: 'value',
             name: 'kWh',
             min: '0',
-            max: '40000',
             axisLine: {
               lineStyle: {
                 color: '#C2C2C2'
@@ -341,13 +336,11 @@
             splitLine: [{
               show: 'false',
             }],
-
           },
           {
             type: 'value',
-            name: '%',
+            name: 'W',
             min: '0',
-            max: '5',
             axisLine: {
               lineStyle: {
                 color: '#C2C2C2'
@@ -360,38 +353,28 @@
             splitLine: [{
               show: 'false',
             }],
-
           },
         ],
         series: [
           {
-              name: '实际发电量',
+              name: '发电量',
               type: 'bar',
               barWidth: '15px',
-              data: actualPower,
+              data: power,
               itemStyle:{  
                 normal:{color:'#fe9700'},
-                emphasis:{color:'#feb64c'}  
+                //emphasis:{color:'#feb64c'}  
               }  
           },
           {
-              name: '应发电量',
+              name: '功率',
               type: 'bar',
               barWidth: '15px',
               barGap: '0',
-              data: demandPower,
-              itemStyle:{  
-                normal:{color:'#ffc400'},
-                emphasis:{color:'#ffd54c'}  
-              } 
-          },
-          {
-              name: '月计划完成率',
-              type: 'line',
               yAxisIndex: 1,
-              data: monthCompleteness,
+              data: energy,
               itemStyle:{  
-                normal:{color:'#9565aa'},  
+                normal:{color:'#feb64c'},  
               }
           }
         ]
@@ -441,13 +424,7 @@
       });
     </script>
     <script src="__PUBLIC__/script/station/header_public.js"></script>
-    <script src="__PUBLIC__/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="__PUBLIC__/js/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script type="text/javascript">
-      $(".form_datetime").datetimepicker({
-          format: "dd MM yyyy - hh:ii"
-      });
-    </script>            
+      
   </body>
 
 </html>
