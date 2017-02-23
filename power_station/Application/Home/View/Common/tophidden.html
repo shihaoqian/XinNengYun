@@ -1,0 +1,144 @@
+<div id="person_pop">
+    <div ng-controller="UpdateUserInfoCtrl" class="modal fade ng-scope in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
+       <div class="modal-dialog row" id="person_panel">
+            <div class="modal-content ">
+                <div class="modal-body wrapper-lg">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="m-t-none m-b font-thin">个人信息</h3>
+                            <div class="panel-body">
+                                <form >
+                                    <div class="form-group">
+                                     <label class="col-lg-2 control-label">用户名</label>
+                                        <div class="col-lg-4">
+                                         <input type="text" readonly="readonly" id="userName" name="userName" class="form-control formData">
+                                        </div>
+                                        <label class="col-lg-2 control-label">手机号码</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" id="phone_number" name="realName" readonly="readonly" class="form-control formData">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 密码修改-->
+<div id="change_pass">
+    <div class="modal-dialog row" id="pass_panel">
+        <div class="modal-content ">
+            <div class="modal-body wrapper-lg">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="m-t-none m-b font-thin" id="myModalLabel">用户密码修改</h3>
+                            <div class="panel-body">
+                                <form class="bs-example form-horizontal ng-pristine ng-valid" id="passform" name="userPasswordChangeModelForm">
+                                    <input type="hidden" name="userId" value="" id="userId" class="formData">
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">旧密码</label>
+                                            <div class="col-lg-8">
+                                                <input autocomplete="off" type="password" id="oldpwd" name="oldpwd" class="form-control formData">
+                                            </div>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">新密码</label>
+                                            <div class="col-lg-8">
+                                                <input autocomplete="off" type="password" id="newpwd" name="newpwd" class="form-control formData" placeholder="请输入新密码">
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">确认密码</label>
+                                            <div class="col-lg-8">
+                                                <input autocomplete="off" type="password" id="newpwdconfirm" name="newpwdconfirm" class="form-control formData" placeholder="再次输入密码">
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10"> 
+                                            <!--
+                                            <button type="button" id="cancel_button" class=" m-l-sm pull-right btn m-b-xs w-xs btn-default" data-dismiss="modal"><strong>取 消</strong></button>
+                                            -->
+                                            <button type="button"  id="changePasswordButton" class="pull-right btn m-b-xs w-xs btn-info"><strong>修 改</strong></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 电站管理-->
+<div id="station_manage">
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" style="text-align:center">电站管理</h3>
+                    <div class="clearfix nav-col">
+                        <div class="pull-left check-box">
+                            <input id="choose_all" type="checkbox" ng-model="groupSelectAll" class="ng-pristine ng-valid ng-touched">
+                            <span>全选</span>
+                        </div>
+                        <div class="pull-left"><a class="delete-all" >删除</a></div>
+                        <div class="pull-left"><span class="add-group" ><img src="__PUBLIC__/images/add-group.png"></span><span>添加电站</span></div>
+                    </div>
+                </div>
+                <div class="modal-body" >
+                    <ul class="group-list" id="add_group" style="height:200px">
+                        <!--
+                        <li class="clearfix">
+                            <div class="pull-left" style="width:3%;"><input type="checkbox" name="groupCheckList" value="64"></div>
+                            <span class="station-name">上海分组</span>
+                        </li>
+                        -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-dialog row" id="add_panel" style="display:none">
+        <div class="modal-content ">
+            <div class="modal-body wrapper-lg">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="m-t-none m-b font-thin" id="myModalLabel">添加电站</h3>
+                            <div class="panel-body">
+                                <form class="bs-example form-horizontal ng-pristine ng-valid" id="passform" name="userPasswordChangeModelForm">
+                                    <input type="hidden" name="userId" value="" id="userId" class="formData">
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" style="font-weight:600;padding-left:20px;width:300px;text-align:left">电站名称</label>
+                                            <div class="col-lg-8" style="margin-top:10px;width:538px">
+                                                <input autocomplete="off" type="text" id="new_name" name="new_name" class="form-control formData" placeholder="请输入电站名称">
+                                            </div>
+                                    </div>  
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label" style="font-weight:600;padding-left:20px;width:300px;text-align:left">电站地理坐标: 格式形如[120.50,31.50]</label>
+                                            <div class="col-lg-8" style="margin-top:10px;width:538px">
+                                                <input autocomplete="off" type="text" id="new_location" name="new_location" class="form-control formData" placeholder="请输入电站地理坐标">
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-2 col-lg-10"> 
+                                            <button type="button"  id="add_new_station" class="pull-left btn m-b-xs w-xs btn-info" style="margin-left:260px"><strong>添加</strong></button>
+                                            <button type="button"  id="cancel_new_station" class="pull-right btn m-b-xs w-xs btn-info"><strong>取消</strong></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

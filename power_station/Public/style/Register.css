@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	    background-color:#f2f2f2 !important;
+}
+.R_head_container{
+	padding-left: 15px;
+	padding-right: 15px;
+	height:50px;
+	background-color:#fff;
+}
+.li_head{
+	font-size: 16px;
+	color:black;
+}
+.reg_control{
+	border: 1px solid #e7e7e7;
+	margin-top: 60px;
+    width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+}
+.reg_panel{
+	border: 0px solid #e7e7e7;
+
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+.reg_person{
+	color: #fff;
+    background-color: #22c1aa;
+	cursor: pointer;
+	font-size: 24px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	position: relative;
+	width:50%;
+	float: left;
+}
+.reg_company{
+	color: #000;
+    background-color: #f2f2f2;
+	cursor: pointer;
+	font-size: 24px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	position: relative;
+	width:50%;
+	float: left;
+}
+.reg_body{
+	position: relative;
+	padding:15px;
+	padding-bottom: 60px;
+}
+.caret_po{
+	display: inline-block;
+    position: absolute;
+    top:100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 10px !important;
+    border-top-color: #22c1aa;
+    color: #22c1aa;
+    width:10px;
+}
+.form_lable{
+	line-height: 34px;
+    padding: 0 !important;
+    text-align: right !important;
+	width: 25%;
+	float: left;
+	font-weight: 200;
+}
+.form_div{
+	position: relative;
+	width: 33.33333333%;
+	float: left;
+	margin-left: 15px;
+}
+.btn{
+	    background-color: #22c1aa;
+	    margin-right: 200px;
+}

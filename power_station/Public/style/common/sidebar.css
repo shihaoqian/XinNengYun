@@ -1,0 +1,68 @@
+#sidebar {
+    width: 200px;
+}
+
+#sidebar > .sidebar-menu {
+    list-style: none;
+    background-color: #1c2b36;
+    margin: 0;
+    padding: 0;
+}
+
+.treeview {
+    border-top: 2px solid #111c22;
+}
+
+.treeview > a {
+    display: block;
+    text-decoration: none !important;
+    padding : 15px;
+    line-height: 14px;
+    font-size: 13px;
+    color: #9fa1a8 !important;
+}
+
+.treeview-menu {
+    padding: 0;
+    list-style: none;
+    background-color: #111c22;
+}
+
+.treeview-menu > li > a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    line-height: 20px;
+    font-size: 13px;
+    color: #96abbb;
+}
+
+.hover {
+    background-color: #fff;
+    color: #000 !important;
+    border-radius: 3px;
+}
+
+.icon {
+    margin: -10px 15px -10px 5px;
+}
+
+.active-icon {
+    background-color: #1caf9a;
+}
+
+.active-right {
+    float: right;
+    color: #FFF;
+}
+
+.active {
+    background-color: #1caf9a;
+    border-radius: 3px;
+    color: #fff !important;
+}
+
+.none {
+    display: none;
+}
+

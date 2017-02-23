@@ -1,0 +1,124 @@
+<include file="Common/station_monitor_header" />
+    
+    <!-- 顶部导航条 -->
+    <div id="topbar">
+      <include file="Common/topbar" />
+    </div>
+  <!-- 顶部影藏信息-->
+    <include file="Common/tophidden" />
+    <!-- 左侧菜单栏 -->
+   <div id="left">
+      <include file="Common/left" />
+    </div>
+
+    <!-- 主要内容 -->
+    <div id="right" >
+    <div class="right_d">
+    	<!-- 布局视图的标题 -->
+    	<div class="lv_title1">
+            <span id="s_name" style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
+            <span style="cursor:pointer;color:#428bca;">[切换]</span>
+            <span style="cursor:pointer;color:#428bca;margin-left:40px;font-size: 16px;">逆变器</span>
+            <ul style="margin-right: 50px;float: right;list-style: none;" name="selectDevStatusLegend">
+                 <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style=" display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
+                    全选
+                    <input type="hidden" value name="all_deviceId_jqselect">
+                </a>
+                <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style="color: rgb(63, 173, 34); display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: rgb(63, 173, 34); display: inline-block;"></i>
+                    正常
+                    <input type="hidden" value name="normal_deviceId_jqselect">
+                </a>
+                <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style="color: #db412f; display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: #db412f; display: inline-block;"></i>
+                    故障
+                    <input type="hidden" value name="error_deviceId_jqselect">
+                </a>
+                <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style="color: #f90; display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: #f90; display: inline-block;"></i>
+                    报警
+                    <input type="hidden" value name="alert_deviceId_jqselect">
+                </a>
+                <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style="color: #999; display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: #999; display: inline-block;"></i>
+                    中断
+                    <input type="hidden" value name="break_deviceId_jqselect">
+                </a>
+                <!-- <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style="color: #ccc; display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: #ccc; display: inline-block;"></i>
+                    阴影遮挡
+                    <input type="hidden" value name="shadow_deviceId_jqselect">
+                </a> -->
+            </ul>
+          <!--   <ul style="margin-right: 0px; float: right;list-style: none;" name="selectDevStatusLegend_All">
+                
+                 <a class="lv_a1">
+                    <i class="lv_fa fa-circle-o" style=" display: none;"></i>
+                    <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
+                    全选
+                    <input type="hidden" value name="all_deviceId_jqselect">
+                </a>
+            </ul>  -->
+        </div>
+
+        <div class="lv_content11" style="background-color: #F0F3F4;height:700px;">
+            <div class="chaxun" style="padding:40px;">
+                <input type="text" name="" class="listview_shurukuang" placeholder="请输入设备编号 / 名称">
+                <button type="button" class="listview_chaxun">查询</button>
+                <div style="float:right;">
+                    <ul class="list_view_ul">
+                        <li>
+                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_left.png">
+                        </li>
+                        <li>
+                          <input type="text" name="" class="listview_shuru2">
+                        </li>
+                        <li>
+                          <a href="" class="listview_a">跳转</a>
+                        </li>
+                        <li>
+                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_right.png">
+                        </li>
+                    </ul>
+                    <span style="float:right;">
+                        <small class="meiyexianshi">每页显示:</small>
+                        <select class="listview_select">
+                          <option checked value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="20">30</option>
+                          <option value="20">50</option>
+                          <option value="20">100</option>
+                        </select>
+                        <small class="meiyexianshi">页数1/1</small>
+
+                    </span>
+                </div>
+            </div>
+
+            <div class="biaoge">
+              <div class="biaoge2">
+                <table class="table_c" id="table3-1"></table>  <!-- 在mmgrid.css设置样式，在listview_table.js中设置数据 -->
+              </div>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+    </div>
+    
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+    <script src="__PUBLIC__/script/station/mmGrid.js"></script>
+    <script src="__PUBLIC__/script/station/listview_table.js"></script>
+  </body>
+</html>

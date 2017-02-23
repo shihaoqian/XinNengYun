@@ -1,0 +1,174 @@
+<include file="Common/station_monitor_header" />
+    
+    <!-- 顶部导航条 -->
+    <div id="topbar">
+      <include file="Common/topbar" />
+    </div>
+  <!-- 顶部影藏信息-->
+    <include file="Common/tophidden" />
+
+
+
+    <!-- 左侧菜单栏 -->
+     <div id="left">
+      <include file="Common/left" />
+    </div>
+
+    <!-- 主要内容 -->
+    <div id="right" >
+    <div class="right_d">
+    	<!-- 布局视图的标题 -->
+    	<div class="lv_title1">
+            <span id="s_name" style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
+            <span style="cursor:pointer;color:#428bca;">[切换]</span>
+        
+        </div>
+
+        <div class="lv_content11" style="background-color: #F0F3F4;height:700px;">
+            <div class="trouble_alarm_right2">
+              <div class="anjibie">
+                <div class="anjibie1">
+                  <div style="padding-top:15px;">
+                    <img src="__PUBLIC__/images/anjibie.png">
+                  </div>
+                  <span style="color:#ffffff;font-size:16px;">按级别</span>
+                </div>
+                <div class="anjibie2">
+                  <span class="text_center">故障</span>
+                  <span class="number">0</span>
+                </div>
+                <div class="anjibie3">
+                  <span class="text_center">报警</span>
+                  <span class="number">10</span>
+                </div>
+              </div>
+              <div class="anshebei">
+                <div class="anshebei1">
+                  <div style="padding-top:15px;">
+                    <img src="__PUBLIC__/images/anshebei.png">
+                  </div>
+                  <span style="color:#ffffff;font-size:16px;">按设备</span>
+                </div>
+                <div class="anshebei2">
+                  <span class="text_center">汇流箱</span>
+                  <span class="number">0</span>
+                </div>
+                <div class="anshebei3">
+                  <span class="text_center">逆变器</span>
+                  <span class="number">0</span>
+                </div>
+                <div class="anshebei4">
+                  <span class="text_center">箱变</span>
+                  <span class="number">0</span>
+                </div>
+                <div class="anshebei5">
+                  <span class="text_center">其他</span>
+                  <span class="number">0</span>
+                </div>
+              </div>
+              <div class="anshijian">
+                <div class="anshijian1">
+                   <div style="padding-top:15px;">
+                    <img src="__PUBLIC__/images/anshijian.png">
+                  </div>
+                  <span style="color:#ffffff;font-size:16px;">按时间</span>
+                </div>
+                <div class="anshijian2">
+                  <span class="text_center">4小时以上</span>
+                  <span class="number">0</span>
+                </div>
+                <div class="anshijian3">
+                  <span class="text_center">2小时以上</span>
+                  <span class="number">0</span>
+                </div>
+                <div class="anshijian4">
+                  <span class="text_center">2小时以内</span>
+                  <span class="number">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chaxun" style="padding:40px;">
+                
+                <div style="float:right;">
+                    <ul class="list_view_ul">
+                        <li>
+                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_left.png">
+                        </li>
+                        <li>
+                          <input type="text" name="" class="listview_shuru2">
+                        </li>
+                        <li>
+                          <a href="" class="listview_a">跳转</a>
+                        </li>
+                        <li>
+                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_right.png">
+                        </li>
+                    </ul>
+                    <span style="float:right;">
+                        <small class="meiyexianshi">每页显示:</small>
+                        <select class="listview_select">
+                          <option checked value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="20">30</option>
+                          <option value="20">50</option>
+                          <option value="20">100</option>
+                        </select>
+                        <small class="meiyexianshi">页数1/1</small>
+
+                    </span>
+                </div>
+            </div>
+            <div class="trouble_alarm_table">
+              <table id="troublealarm_table1" class="troublealarm_table1c">
+                
+              </table>
+             
+            </div>
+
+             <!-- 在mmgrid.css设置样式，在listview_table.js中设置数据 -->
+           <!--  <div class="biaoge">
+              <div class="biaoge2">
+                <table class="table_c" id="table3-1"></table> 
+              </div>
+            </div>
+ -->
+        </div>
+
+        
+          
+
+        </div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript">
+      function decodeMessage(){
+      var tmp="";
+      tmp+="<th class=\"th1\">设备名称</th><th class=\"th1\">故障类型</th><th class=\"th1\">设备类型</th><th class=\"th2\">故障发生时间</th><th class=\"th2\">故障描述</th><th class=\"th1\">持续时间</th>"
+      for(j=0;j<=5;j++){
+        tmp+="<tr>";
+        
+        tmp+= "<td>"+"WD02B-5-A-12"+"</td>"+
+              "<td>"+"报警"+"</td>"+
+              "<td>"+"汇流箱"+"</td>"+
+              "<td>"+"2017-02-07 08:08:58"+"</td>"+
+              "<td>"+"第15路电流异常"+"</td>"+
+              "<td>"+"4小时以上"+"</td>";
+      
+        tmp+="<tr>";
+      }
+     
+         document.getElementById("troublealarm_table1").innerHTML=tmp;
+     }
+     decodeMessage();
+    </script> 
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+
+
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+  </body>
+</html>

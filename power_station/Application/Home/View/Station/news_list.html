@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据可视化</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/power_station_monitor.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/news_list.css">
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+  </head>
+  <body>
+
+    <!-- 顶部导航条 -->
+    <div id="topbar">
+       <include file="Common/topbar" />
+    </div>
+
+ <!-- 顶部影藏信息-->
+     <include file="Common/tophidden" />
+
+
+
+    <!-- 左侧菜单栏 -->
+    <div id="left">
+      <include file="Common/left" />
+    </div>
+
+    <!-- 主要内容 -->
+    <div id="right" style="bottom:0px;background:transparent;overflow:hidden">
+        <div class="right_m">
+    	    <div class="right_left">
+                <div class="task_box">
+                    <div class="text-center" style="padding:15px;background:#06bebd;color: #fff;">
+                       <span style="color:white !important;font-size:16px;cursor:pointer"> 
+                            <img src="__PUBLIC__/images/edit.png" style="width:16px;height:16px;margin-right:20px;margin-top:-1px;vertical-align:middle;border:0">发布任务
+                        </span>
+                    </div>
+                    <form class="col-sm-12" style="margin-top:10px;">
+                        <div style="margin-bottom:10px">
+                            <div class="input-group">
+                                <input id="noteSearch" type="text" class="form-control input-sm bg-light no-border padder" style="border-top-left-radius:500px;border-bottom-left-radius:500px" placeholder="搜索">
+                                <span class="input-group-btn" style="margin-left:-10px">
+                                    <button  type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                           
+                        </div>
+                    </form>
+                    <ul class="ul_news clearfix">
+                        <li>全部消息</li>
+                        <li style="border-bottom-color:#fff">未阅读</li>
+                        <li style="border-bottom-color:#fff">未关闭</li>
+                    </ul>
+                    <div class="rows_news">
+                        <div class="cehh">
+                            <div class="cell_inner">
+                                <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span id="s_name" style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                 <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                 <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                 <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                                 <div class="col-xs-12 news_content" style="">
+                                    <div style="width:81px;float:left">
+                                        <span style="font-size:14px;color:black;">
+                                            <img src="__PUBLIC__/images/gear.png" class="icon_attr">
+                                            苏州4号发电站
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 pull-right" >
+                                        <span class="pull-right">
+                                            <span style="margin-right:5px;font-size:10px">2小时 11分钟前</span>
+                                            <span style="color:#666;font-size:10px">已关闭</span>
+                                        </span> 
+                                    </div>
+                                    <div class="col-xs-10 pull-left" style="font-size:12px;padding:0">
+                                        <span >WD02B-5-A-12
+                                        第15路电流异常</span>
+                                    </div> 
+                                    <div class="col-xs-12 no-padder">
+                                        <small >演示用户</small>
+                                        <small  class="m-r-xs">:</small>
+                                        <small >分析判断不需要处理，原因：</small>
+                                  </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="note_page">
+                        <div class="note_contain col-sm-12">
+                            <ul class="pull-right pagination pagination-sm" style="background:transparent;margin-top:-2.5px">
+                                <li >
+                                    <a style="height:28px;border-radius:4px"><i class="fa fa-angle-left" style="height:28px;cursor:pointer"></i></a>
+                                </li>
+                                <li>
+                                    <input class="form-control pull-left text-center" style="width: 30px;height: 28px;padding: 0 5px;display: inline-block;margin-left:5px" type="text" >
+                                     <a class="btn" style="border-radius:3px;width: 35px;height:28px;padding: 3px 3px;margin-left:5px;background-color:#1caf9a;color:white;font-size:14px">跳转</a>
+                                </li>
+                                <li  class="">
+                                    <a style="margin-left:5px;height:28px;border-radius:4px;cursor:pointer;background-color:#1caf9a;"><i class="fa fa-angle-right" style="color:white"></i></a>
+                                </li>
+                            </ul>
+                            <span class="float:left">
+                                <span class="pull-left">
+                                    <small class="page_text">页数
+                                        <span  class="ng-binding">1</span>/
+                                        <span  class="ng-binding">94</span>
+                                        
+                                    </small>
+                                </span>
+
+                            </span>
+                        </div>
+                    </div>
+               </div>
+           </div>
+           <div class="right_right">
+               <div class="task_box">
+                    <div id="noMessFlag" class="text-center" style="margin-top: 20%;">
+                        <img src="__PUBLIC__/images/noMessage.png">
+                    </div>
+               </div>
+           </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+    
+  </body>
+</html>
