@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据可视化</title> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/analysisView/analyData.css">
+  </head>
+  <body>
+    
+    <!-- 顶部菜单栏 -->
+    <div id="top">
+      <include file="Common/topbar" />
+    </div>
+    <include file="Common/tophidden" />
+    <!-- 左侧菜单栏 -->
+    <div id="left">
+      <include file='Common/left' />
+    </div>
+
+    <div class="analysisView" id="right">
+      <div class="container-fluid no-padding">
+
+        <!-- 主内容标题栏 -->
+        <div class="col-sm-12 overview-title">
+          <div class="pull-left overview-title-font">
+            <span>龙游瑞源光伏电站</span>
+            <span style="cursor:pointer;color: #428bca; font-size: 13px;">[切换]</span>
+            <span style="padding-left: 10px"><img src="__PUBLIC__/images/date.png">
+              <span id="title-day" class="overview-title-time">日</span>
+              <span id="title-month" class="overview-title-time title-time-active">月</span>
+              <span id="title-year" class="overview-title-time">年</span>
+              <span id="title-total" class="overview-title-time">累计</span>
+            </span>
+          </div>
+        </div>
+
+        <div id="main-content" class="col-sm-12">
+          <!-- 添加自己内容 -->
+          <div class="col-sm-12 panel">
+            <div class="pull-right" style="margin: 10px 0;">
+              <span class="m-r-xs">
+                <i class="fa fa-circle m-r-xs" style="color:#c0504d"></i>
+                故障
+              </span>
+              <span class="m-r-xs">
+                <i class="fa fa-circle m-r-xs" style="color:#ffc700"></i>
+                报警
+              </span>
+              <span class="m-r-xs">
+                <i class="fa fa-circle m-r-xs" style="color:#999999"></i>
+                中断
+              </span>
+            </div>
+            <div id="timesChart" style="width: 100%; height: 300px"></div>
+          </div>
+          <div class="col-sm-12 panel">
+            <div class="pull-right" style="margin: 10px 0;>
+              <span class="m-r-xs">
+                <i class="fa fa-circle m-r-xs" style="color:#4879df"></i>
+                逆变器
+              </span>
+              <span class="m-r-xs">
+                <i class="fa fa-circle m-r-xs" style="color:#97c34b"></i>
+                汇流箱
+              </span>
+              <span class="m-r-xs">
+                <i class="fa fa-circle m-r-xs" style="color:#d583dc"></i>
+                箱变
+              </span>
+            </div>
+            <div id="faultTimesChart" style="width: 100%; height: 300px"></div>
+          </div>
+          <div class="col-sm-12 panel">
+            <div class="pull-right" style="margin: 10px 0;>
+              <span class="m-r-xs">
+                <i class="fa fa-minus m-r-xs" style="color:#e06759"></i>
+                故障率
+              </span>
+            </div>
+            <div id="faultRateChart" style="width: 100%; height: 300px"></div>
+          </div>
+          <div class="col-sm-12 panel">
+            <div class="pull-right" style="margin: 10px 0;>
+              <span class="m-r-xs">
+                <i class="fa fa-minus m-r-xs" style="color:#f2cd94"></i>
+                MTTR
+              </span>
+              <span class="m-r-xs">
+                <i class="fa fa-minus m-r-xs" style="color:#34c5bd"></i>
+                MTBF
+              </span>
+            </div>
+            <div id="mtChart" style="width: 100%; height: 300px"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+    <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
+    <script type="text/javascript">
+      var times = [];
+      var days = [];
+
+      //timesChart视图
+      var timesChart = echarts.init(document.getElementById('timesChart'));
+      var option = {
+        tooltip : {
+          trigger: 'axis',
+          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'line',// 默认为直线，可选为：'line' | 'shadow'
+            lineStyle: {
+               color: '#c3c3c3',
+            }
+          }
+        },
+        grid: {
+          left: 60,
+          right: 60,
+          top: 30,
+          botton: 0,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: days,
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+                show: 'false',
+                alignWithLabel: 'true'
+            }]
+          },
+        ],
+        yAxis: {
+          type: 'value',
+          name: '台次',
+          min: '0',
+          max: '5',
+          axisLine: {
+            lineStyle: {
+              color: '#C2C2C2'
+            }
+          },
+          axisTick: [{
+            show: 'false',
+            alignWithLabel: 'true'
+          }],
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#C2C2C2',
+              type: 'dashed',
+            }
+          },
+        },
+        series: [
+          {
+              name: '故障',
+              type: 'bar',
+              barWidth: '15px',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#c0504d'},
+                //emphasis:{color:'#feb64c'}  
+              }  
+          },
+          {
+              name: '报警',
+              type: 'bar',
+              barWidth: '15px',
+              barGap: '0',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#ffc700'},  
+              } 
+          },
+          {
+              name: '中断',
+              type: 'bar',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#999999'},  
+              }
+          }
+        ]
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      timesChart.setOption(option);
+
+      //faultTimesChart视图
+      var faultTimesChart = echarts.init(document.getElementById('faultTimesChart'));
+      var option = {
+        tooltip : {
+          trigger: 'axis',
+          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'line',// 默认为直线，可选为：'line' | 'shadow'
+            lineStyle: {
+               color: '#c3c3c3',
+            }
+          }
+        },
+        grid: {
+          left: 60,
+          right: 60,
+          top: 30,
+          botton: 0,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: days,
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+                show: 'false',
+                alignWithLabel: 'true'
+            }]
+          },
+        ],
+        yAxis: {
+          type: 'value',
+          name: '故障台次',
+          min: '0',
+          max: '5',
+          axisLine: {
+            lineStyle: {
+              color: '#C2C2C2'
+            }
+          },
+          axisTick: [{
+            show: 'false',
+            alignWithLabel: 'true'
+          }],
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#C2C2C2',
+              type: 'dashed',
+            }
+          },
+        },
+        series: [
+          {
+              name: '逆变器',
+              type: 'bar',
+              barWidth: '15px',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#4879df'},
+                //emphasis:{color:'#feb64c'}  
+              }  
+          },
+          {
+              name: '汇流箱',
+              type: 'bar',
+              barWidth: '15px',
+              barGap: '0',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#97c34b'},  
+              } 
+          },
+          {
+              name: '箱变',
+              type: 'bar',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#d583dc'},  
+              }
+          }
+        ]
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      faultTimesChart.setOption(option);
+
+      //faultRateChart视图
+      var faultRateChart = echarts.init(document.getElementById('faultRateChart'));
+      var option = {
+        tooltip : {
+          trigger: 'axis',
+          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'line',// 默认为直线，可选为：'line' | 'shadow'
+            lineStyle: {
+               color: '#c3c3c3',
+            }
+          }
+        },
+        grid: {
+          left: 60,
+          right: 60,
+          top: 30,
+          botton: 0,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: days,
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+                show: 'false',
+                alignWithLabel: 'true'
+            }]
+          },
+        ],
+        yAxis: {
+          type: 'value',
+          name: '次',
+          min: '0',
+          max: '5',
+          axisLine: {
+            lineStyle: {
+              color: '#C2C2C2'
+            }
+          },
+          axisTick: [{
+            show: 'false',
+            alignWithLabel: 'true'
+          }],
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#C2C2C2',
+              type: 'dashed',
+            }
+          },
+        },
+        series: [
+          {
+              name: '故障率',
+              type: 'line',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#e06759'},
+                //emphasis:{color:'#feb64c'}  
+              }  
+          },
+        ]
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      faultRateChart.setOption(option);
+
+            //faultRateChart视图
+      var mtChart = echarts.init(document.getElementById('mtChart'));
+      var option = {
+        tooltip : {
+          trigger: 'axis',
+          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'line',// 默认为直线，可选为：'line' | 'shadow'
+            lineStyle: {
+               color: '#c3c3c3',
+            }
+          }
+        },
+        grid: {
+          left: 60,
+          right: 60,
+          top: 30,
+          botton: 0,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: days,
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+                show: 'false',
+                alignWithLabel: 'true'
+            }]
+          },
+        ],
+        yAxis: {
+          type: 'value',
+          name: 'h',
+          min: '0',
+          max: '5',
+          axisLine: {
+            lineStyle: {
+              color: '#C2C2C2'
+            }
+          },
+          axisTick: [{
+            show: 'false',
+            alignWithLabel: 'true'
+          }],
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#C2C2C2',
+              type: 'dashed',
+            }
+          },
+        },
+        series: [
+          {
+              name: 'MTTR',
+              type: 'line',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#f2cd94'},
+                //emphasis:{color:'#feb64c'}  
+              }  
+          },
+          {
+              name: 'MTBF',
+              type: 'line',
+              data: [],
+              itemStyle:{  
+                normal:{color:'#34c5bd'},
+                //emphasis:{color:'#feb64c'}  
+              }  
+          },
+        ]
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      mtChart.setOption(option);
+
+      setTimeout(function (){
+        window.onresize = function () {
+            timesChart.resize();
+            faultTimesChart.resize();
+            faultRateChart.resize();
+        }
+      },200)
+    </script>   
+  </body>
+
+</html>
