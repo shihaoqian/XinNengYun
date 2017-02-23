@@ -5,6 +5,10 @@ body {
     line-height: 1.42857;
 }
 
+.analysisView {
+    background-color: #F0F3F4;
+}
+
 .overview {
     background-color: #FFF;
 }
