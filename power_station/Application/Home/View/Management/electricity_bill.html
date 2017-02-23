@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>数据可视化</title>
-
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
@@ -13,11 +12,6 @@
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/power_station_monitor.css">
-    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
- 
- 
-
-  
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/station/electricity_bill.css">
     <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
   </head>
@@ -25,17 +19,14 @@
   	
     <!-- 顶部导航条 -->
     <div id="topbar">
-      <include file="Common/topbar" />
+        <include file="Common/topbar" />
     </div>
 
-    
+  
  <!-- 顶部影藏信息-->
      <include file="Common/tophidden" />
 
-
-
-
- <!-- 左侧菜单栏 -->
+    <!-- 左侧菜单栏 -->
      <div id="left">
       <include file="Common/left" />
     </div>
@@ -45,7 +36,7 @@
     <div class="right_m">
     	<div>
             <div class="right-top">
-                <span class="text-top" style="padding-left: 10px;">龙游瑞源光伏电站</span>
+                <span id="s_name" class="text-top" style="padding-left: 10px;"></span>
                 <span style="cursor:pointer;color: #428bca;">[切换]</span>
             </div>   
             <div style="padding:10px">
@@ -134,8 +125,10 @@
     </div>
 
     <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
-    <script src="__PUBLIC__/script/station/bootstrap.min.js"></script>
+   <script type="text/javascript" src="__PUBLIC__/script/station/jquery.datetimepicker.full.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
     <script src="__PUBLIC__/script/station/sidebar.js"></script>
     <script src="__PUBLIC__/script/station/header_public.js"></script>
+
   </body>
 </html>
