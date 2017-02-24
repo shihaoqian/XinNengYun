@@ -38,13 +38,29 @@ class StationController extends Controller {
     public function operational_expenses(){
         $this->display();
     }
-    public function power_energy(){
-        $chart=new model('pe20161101-20161122');
+    public function power_energy_monitor_chart(){
+        $chart=new model("pe20161101-20161122");
        // $condition='2016-11-01 05:01:00';
         $map['time'] = array('between',array('2016-11-01 06:00:00','2016-11-01 18:00:00'));
         $result=$chart->where($map)->select();
+        // $my = new Model();
+        // $result=$my->query("select * from component");
+        // file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
+        // error_log(print_r($result,1), 3, 'D:/php_log.txt');
         $this->ajaxReturn($result);
     }
+    public function power_energy_monitor_firstLine(){
+        // file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
+        file_put_contents('D:/php_log.txt',"hello22",FILE_USE_INCLUDE_PATH,null);
+        $data=new model("power_station_monitor_total");
+        // $maxId=$data->max("id");
+        // $map["id"]=$maxId;
+        // $result=$data->where($map)->select();
+        $result=$data->order('id desc')->limit(1)->select();          //limit(10,25)  查询从第10行开始的25条数据
+        
+        $this->ajaxReturn($result);
+    }
+    
     public function zl_info(){
         $chart=new model('panelstate');
        // $condition='2016-11-01 05:01:00';

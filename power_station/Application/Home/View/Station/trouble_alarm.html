@@ -17,19 +17,19 @@
     <!-- 主要内容 -->
     <div id="right" >
     <div class="right_d">
-    	<!-- 布局视图的标题 -->
-    	<div class="lv_title1">
+      <!-- 布局视图的标题 -->
+      <div class="trouble_alarm_title1">
             <span id="s_name" style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
             <span style="cursor:pointer;color:#428bca;">[切换]</span>
         
-        </div>
+      </div>
 
-        <div class="lv_content11" style="background-color: #F0F3F4;height:700px;">
+        <div class="trouble_alarm_content11" style="background-color: #F0F3F4;">
             <div class="trouble_alarm_right2">
               <div class="anjibie">
                 <div class="anjibie1">
                   <div style="padding-top:15px;">
-                    <img src="__PUBLIC__/images/anjibie.png">
+                    <img src="http://localhost:8080/hahaha/thinkphp/Public/images/anjibie.png">
                   </div>
                   <span style="color:#ffffff;font-size:16px;">按级别</span>
                 </div>
@@ -45,7 +45,7 @@
               <div class="anshebei">
                 <div class="anshebei1">
                   <div style="padding-top:15px;">
-                    <img src="__PUBLIC__/images/anshebei.png">
+                    <img src="http://localhost:8080/hahaha/thinkphp/Public/images/anshebei.png">
                   </div>
                   <span style="color:#ffffff;font-size:16px;">按设备</span>
                 </div>
@@ -69,7 +69,7 @@
               <div class="anshijian">
                 <div class="anshijian1">
                    <div style="padding-top:15px;">
-                    <img src="__PUBLIC__/images/anshijian.png">
+                    <img src="http://localhost:8080/hahaha/thinkphp/Public/images/anshijian.png">
                   </div>
                   <span style="color:#ffffff;font-size:16px;">按时间</span>
                 </div>
@@ -86,14 +86,14 @@
                   <span class="number">0</span>
                 </div>
               </div>
-            </div>
+           </div>
 
-            <div class="chaxun" style="padding:40px;">
+            <div class="trouble_alarm_chaxun">
                 
                 <div style="float:right;">
                     <ul class="list_view_ul">
                         <li>
-                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_left.png">
+                          <img style="cursor:pointer;" src="http://localhost:8080/hahaha/thinkphp/Public/images/button_left.png">
                         </li>
                         <li>
                           <input type="text" name="" class="listview_shuru2">
@@ -102,7 +102,7 @@
                           <a href="" class="listview_a">跳转</a>
                         </li>
                         <li>
-                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_right.png">
+                          <img style="cursor:pointer;" src="http://localhost:8080/hahaha/thinkphp/Public/images/button_right.png">
                         </li>
                     </ul>
                     <span style="float:right;">
@@ -119,6 +119,7 @@
                     </span>
                 </div>
             </div>
+
             <div class="trouble_alarm_table">
               <table id="troublealarm_table1" class="troublealarm_table1c">
                 
@@ -126,13 +127,8 @@
              
             </div>
 
-             <!-- 在mmgrid.css设置样式，在listview_table.js中设置数据 -->
-           <!--  <div class="biaoge">
-              <div class="biaoge2">
-                <table class="table_c" id="table3-1"></table> 
-              </div>
-            </div>
- -->
+
+
         </div>
 
         
@@ -163,7 +159,7 @@
          document.getElementById("troublealarm_table1").innerHTML=tmp;
      }
      decodeMessage();
-    </script> 
+    </script>
     <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
     <script src="__PUBLIC__/script/station/sidebar.js"></script>
     <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>

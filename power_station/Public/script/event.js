@@ -125,7 +125,7 @@ window.setInterval(update_overview_info,10000);
 			$('#switchPowerModal').css('display','block');
 			$.ajax({
 				type: "POST",
-				url: "Index/map_info",
+				url: "map_info",
 				async:false,
 				success:function(data){
 					$('#append_show').empty();
