@@ -58,7 +58,7 @@ function getPowerEnergy(){
     var dataEnergy=[];
     var date=[];
 
-    for(var j=6;j<22;j++){
+    for(var j=6;j<18;j++){
         for(var i=0;i<60;i++){
             if(j<10&&i<10){
                 date.push("0"+j+":"+"0"+i);
