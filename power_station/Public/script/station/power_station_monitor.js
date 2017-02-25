@@ -19,15 +19,18 @@ function getFirstLineData(){
     var tmpdata=[];
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/hahaha/thinkphp/Home/Station/power_energy_monitor_firstLine",
+        url: "power_energy_monitor_firstLine",
         toServerData: "",
         async:false,
         success:function(data){
             // console.log(data[0]['powerstation_num']);
-            $(".right1_right_span1_1").text(data[0]['powerstation_num']);
-            $(".right1_right_span1_2").text(data[0]['install_num_total']);
-            $(".right1_right_span1_3").text(data[0]['electricity_total']);
-            $(".right1_right_span1_4").text(data[0]['co2_reduction']);
+            if(data!=null){
+                $(".right1_right_span1_1").text(data[0]['powerstation_num']);
+                $(".right1_right_span1_2").text(data[0]['install_num_total']);
+                $(".right1_right_span1_3").text(data[0]['electricity_total']);
+                $(".right1_right_span1_4").text(data[0]['co2_reduction']);
+            }
+            
         }
     }
     );
@@ -72,7 +75,7 @@ function getPowerEnergy(){
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/hahaha/thinkphp/Home/Station/power_energy_monitor_chart",
+        url: "power_energy_monitor_chart",
         data: "",          //发送到服务器的数据
         async:false,       //是否异步处理
         success:function(data){
