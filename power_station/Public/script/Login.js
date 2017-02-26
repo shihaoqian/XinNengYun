@@ -19,7 +19,7 @@
 						  //
 						  //html: false
 						}, function(){
-						  window.location.href="../Index/index"; 
+						  window.location.href="../Index/entrance"; 
 						});
 					break;
 				case 'user_empty':

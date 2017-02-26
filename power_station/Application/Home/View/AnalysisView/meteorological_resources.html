@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>光伏电站</title> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/weather-icons-master/css/weather-icons-wind.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/weather-icons-master/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/analysisView/analyData.css">
+  </head>
+  <body>
+    
+    <!-- 顶部菜单栏 -->
+    <div id="top">
+      <include file="Common/topbar" />
+    </div>
+    <include file="Common/tophidden" />
+    <!-- 左侧菜单栏 -->
+    <div id="left">
+      <include file='Common/left' />
+    </div>
+
+    <div class="analysisView" id="right">
+      <div class="container-fluid no-padding">
+
+        <!-- 主内容标题栏 -->
+        <div class="col-sm-12 overview-title">
+          <div class="pull-left overview-title-font">
+            <span>龙游瑞源光伏电站</span>
+            <span style="cursor:pointer;color: #428bca; font-size: 13px;">[切换]</span>
+            <span style="padding-left: 10px"><img src="__PUBLIC__/images/date.png">
+              <span id="title-day" class="overview-title-time">日</span>
+              <span id="title-month" class="overview-title-time title-time-active">月</span>
+              <span id="title-year" class="overview-title-time">年</span>
+              <span id="title-total" class="overview-title-time">累计</span>
+            </span>
+          </div>
+        </div>
+
+        <div id="main-content" class="col-sm-12 main-padding">
+          <!-- 添加自己内容 -->
+          <div class="col-sm-12 panel no-padding">
+            <div class="col-sm-12 no-padding">
+              <span class="text-center col-sm-7-d">星期日</span>
+              <span class="text-center col-sm-7-d">星期一</span>
+              <span class="text-center col-sm-7-d">星期二</span>
+              <span class="text-center col-sm-7-d">星期三</span>
+              <span class="text-center col-sm-7-d">星期四</span>
+              <span class="text-center col-sm-7-d">星期五</span>
+              <span class="text-center col-sm-7-d">星期六</span>
+            </div>
+            <!-- 每天详细信息 -->
+            <div class="col-sm-12 no-padding">
+              <div class="col-sm-7-d">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font"></span>
+                  <span class="pull-right calender-icon">
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font"></span>
+                  <span class="pull-right calender-icon">
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font"></span>
+                  <span class="pull-right calender-icon">
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star2">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">01</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-day-sunny wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    3.736 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star1">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">02</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-cloudy wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    1.0009 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star1">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">03</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-snow wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    1.5386 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star1">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">04</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-sprinkle wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    1.1054 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star2">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">05</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-dust wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    4.0394 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star1">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">06</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-windy wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    0.8892 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star1">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">07</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-cloudy wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    3.3259 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-7-d star1">
+                <div style="height: 37px;">
+                  <span class="pull-left calender-font">08</span>
+                  <span class="pull-right calender-icon">
+                    <i class="wi wi-cloudy wi-fw"></i>
+                  </span>
+                </div>
+                <div style="height: 1px;">
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    0.0714 kWh/㎡
+                  </span>
+                </div>
+                <div style="height: 20px;">
+                  <span class="pull-left radiation-font">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 panel no-padding">
+            <div style="padding: 15px;">
+              <span>辐射总量</span>
+              <span class="pull-right">
+                <i class="fa fa-circle m-r-xs" style="color:#ffc700"></i>
+                晴
+                <i class="fa fa-circle m-r-xs" style="color:#90abfc"></i>
+                阴
+                <i class="fa fa-circle m-r-xs" style="color:#5fc6be"></i>
+                雨
+                <i class="fa fa-circle m-r-xs" style="color:#28b5fa"></i>
+                雪
+                <i class="fa fa-circle m-r-xs" style="color:#999999"></i>
+                霾
+                <i class="fa fa-circle m-r-xs" style="color:#fe9700"></i>
+                其它
+              </span>
+            </div>
+            
+            <div id="CalChart" style="width: 100%; min-height: 336px; height: 100%;">
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>
+    <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
+    <script type="text/javascript">
+      
+      var sun = '#ffc700';
+      var cloudy = '#90abfc';
+      var rain = '#5fc6be';
+      var snow = '#28b5fa';
+      var dust = '#999999';
+      var other = '#fe9700';
+
+      var days = ['01','02','03','04','05','06','07','08'];
+      var radiation = ['3.736','1.0009','1.5386','1.1054','4.0394','0.8892','3.3259','0.0714']
+
+      var CalChart = echarts.init(document.getElementById('CalChart'));
+
+
+      var option = {
+        tooltip : {
+          trigger: 'axis',
+          axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'line',// 默认为直线，可选为：'line' | 'shadow'
+            lineStyle: {
+               color: '#c3c3c3',
+            }
+          }
+        },
+        grid: {
+          left: 100,
+          right: 100,
+          botton: 0,
+        },
+        xAxis: [{
+          type: 'category',
+          data: days,
+          axisLine: {
+            lineStyle: {
+              color: '#C2C2C2'
+            }
+          },
+          axisTick: [{
+              show: 'false',
+              alignWithLabel: 'true'
+          }]
+        }],
+        yAxis: [
+          {
+            type: 'value',
+            name: 'kWh/㎡',
+            min: '0',
+            axisLine: {
+              lineStyle: {
+                color: '#C2C2C2'
+              }
+            },
+            axisTick: [{
+              show: 'false',
+              alignWithLabel: 'true'
+            }],
+            splitLine: [{
+              show: 'false',
+            }],
+          },
+        ],
+        series: [
+          {
+              name: '辐射总量',
+              type: 'bar',
+              barWidth: '15px',
+              itemStyle: {
+                normal: {
+                  color: function(params) {
+                    var colorList = [sun,cloudy,rain,snow,dust,other,cloudy,cloudy];
+                    return colorList[params.dataIndex];
+                  }
+                }
+              },
+              data: radiation, 
+          },
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      CalChart.setOption(option);
+
+      setTimeout(function (){
+        window.onresize = function () {
+            CalChart.resize();
+        }
+      },200)
+    </script>  
+  </body>
+
+</html>
