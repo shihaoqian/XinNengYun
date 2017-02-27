@@ -22,17 +22,10 @@ class AnalysisViewController extends Controller {
         } 
         $result = [$power_result_month,$energy_result_month];
         $this->ajaxReturn($result);
-<<<<<<< HEAD
+
     }    
     public function get_station_name(){
         session_start();
         echo $_SESSION['station_name'];
-    }  
-=======
-    }
-
-    public function get_station_name(){
-        echo $_SESSION['station_name'];
     }      
->>>>>>> 84e953f1f3eeae78586eabeacf4c5118f37322de
 }
