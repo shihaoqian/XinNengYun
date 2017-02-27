@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>光伏电站</title> 
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/analysisView/analyData.css">
+  </head>
+  <body>
+    
+    <!-- 顶部菜单栏 -->
+    <div id="top">
+      <include file="Common/topbar" />
+    </div>
+    <include file="Common/tophidden" />
+    <!-- 左侧菜单栏 -->
+    <div id="left">
+      <include file='Common/left' />
+    </div>
+
+    <div class="analysisView" id="right">
+      <div class="container-fluid no-padding">
+
+        <!-- 主内容标题栏 -->
+        <div class="col-sm-12 overview-title">
+          <div class="pull-left overview-title-font">
+            <span>龙游瑞源光伏电站</span>
+            <span style="cursor:pointer;color: #428bca; font-size: 13px;">[切换]</span>
+            <span style="padding-left: 10px"><img src="__PUBLIC__/images/date.png">
+              <span id="title-day" class="overview-title-time">日</span>
+              <span id="title-month" class="overview-title-time title-time-active">月</span>
+              <span id="title-year" class="overview-title-time">年</span>
+              <span id="title-total" class="overview-title-time">累计</span>
+            </span>
+          </div>
+        </div>
+
+        <div id="main-content" class="col-sm-12">
+          <!-- 添加自己内容 -->
+          <div class="panel no-padding" style="margin-top: 10px;">
+            <div class="ranking-con">
+              <div class="title-con">
+                <span class="title">共1个电站</span>
+              </div>
+              <div class="clearfix">
+                <div class="pull-left pr-con">
+                  <p class="item-header">PR排名</p>
+                  <ul>
+                    <li class="row no-margin">
+                      <div class="col-sm-6">
+                        <span class="serial-con span">
+                          <img src="__PUBLIC__/images/ranking1.png" style="margin-top: -15px;">
+                          <span class="serial-num span">1</span>
+                        </span>
+                        <span class="span">龙游瑞源光伏电站</span>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="pr-center">86.7%</div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="progressBar">
+                          <span class="bar-content span" style="width:86.7%"></span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="pull-right power-con">
+                  <p class="item-header">发电量排名</p>
+                  <ul>
+                    <li class="row no-margin">
+                      <div class="col-sm-6">
+                        <span class="serial-con span">
+                          <img src="__PUBLIC__/images/ranking1.png" style="margin-top: -15px;">
+                          <span class="serial-num span">1</span>
+                        </span>
+                        <span class="span">龙游瑞源光伏电站</span>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="pr-center">6.8923万度</div>
+                      </div>
+                      <div class="col-sm-4">
+                        <span class="pull-right">装机量10WM</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+             <!--  <div class="clearfix">
+                <div class="pull-left pr-con">
+                  <p class="item-header">PR排名</p>
+                  <ul>
+                    <li>
+                      <div class="pull-left pr-left">
+                        <span class="serial-con span">
+                          <img src="__PUBLIC__/images/ranking1.png" style="margin-top: -15px;">
+                          <span class="serial-num span">1</span>
+                        </span>
+                        <span class="span">龙游瑞源光伏电站</span>
+                      </div>
+                      
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script src="__PUBLIC__/script/station/header_public.js"></script>   
+  </body>
+
+</html>

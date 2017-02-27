@@ -24,10 +24,13 @@ function getFirstLineData(){
         async:false,
         success:function(data){
             // console.log(data[0]['powerstation_num']);
-            $(".right1_right_span1_1").text(data[0]['powerstation_num']);
-            $(".right1_right_span1_2").text(data[0]['install_num_total']);
-            $(".right1_right_span1_3").text(data[0]['electricity_total']);
-            $(".right1_right_span1_4").text(data[0]['co2_reduction']);
+            if(data!=null){
+                $(".right1_right_span1_1").text(data[0]['powerstation_num']);
+                $(".right1_right_span1_2").text(data[0]['install_num_total']);
+                $(".right1_right_span1_3").text(data[0]['electricity_total']);
+                $(".right1_right_span1_4").text(data[0]['co2_reduction']);
+            }
+            
         }
     }
     );
@@ -55,7 +58,7 @@ function getPowerEnergy(){
     var dataEnergy=[];
     var date=[];
 
-    for(var j=6;j<22;j++){
+    for(var j=6;j<18;j++){
         for(var i=0;i<60;i++){
             if(j<10&&i<10){
                 date.push("0"+j+":"+"0"+i);

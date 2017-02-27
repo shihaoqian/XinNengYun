@@ -65,7 +65,7 @@
 	display: none;
 }
 
-.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active {
+.xdsoft_datetimepicker .xdsoft_datepicker.datetime_picker_active, .xdsoft_datetimepicker .xdsoft_timepicker.datetime_picker_active {
 	display: block;
 }
 
@@ -97,7 +97,7 @@
 	margin-left: 0;
 }
 
-.xdsoft_datetimepicker .xdsoft_datepicker.active+.xdsoft_timepicker {
+.xdsoft_datetimepicker .xdsoft_datepicker.datetime_picker_active+.xdsoft_timepicker {
 	margin-top: 8px;
 	margin-bottom: 3px
 }
