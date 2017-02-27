@@ -525,7 +525,6 @@
 	<script type="text/javascript" src="__PUBLIC__/Static/echarts/province/重庆.js"></script>
 
 	<script type="text/javascript" src="__PUBLIC__/script/test_map.js"></script>
-	<script type="text/javascript">var url = "{:U('User/index')}"</script>
 	<script type="text/javascript" src="__PUBLIC__/script/event.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/Static/sweetalert-master/dist/sweetalert.min.js"></script>
