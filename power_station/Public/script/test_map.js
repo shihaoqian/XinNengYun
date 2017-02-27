@@ -633,7 +633,7 @@ option = {
         }
     },
     //geo
-     geo: {
+    geo: {
         show:true,
         map: 'china',
         roam:true,
@@ -682,11 +682,18 @@ option = {
             hoverAnimation:true,
             itemStyle: {
                 normal: {
-                    color: 'rgba(42, 280, 54,1)',
+                    color: function(params){
+                        console.log(params.dataIndex);
+                        console.log(params.data.name);
+                        if(params.dataIndex==1){
+                            return 'rgba(247, 28, 5, 1)';
+                        }
+                        return 'rgba(42, 280, 54,1)';
+                    },
                 },
                 emphasis:{
-                    color:'rgba(42, 280, 54,1)',
-                    shadowColor: 'rgba(42, 280, 54,1)',
+                    //color:'rgba(42, 280, 54,1)',
+                    //shadowColor: 'rgba(42, 280, 54,1)',
                     shadowBlur: 100,
                    
                 }
@@ -699,7 +706,6 @@ option = {
             hoverAnimation: true
         }
     ],
-   
     animation: false
 };
 

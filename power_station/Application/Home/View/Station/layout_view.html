@@ -35,57 +35,59 @@
     <div id="right" >
       <div class="right_d">
       	<!-- 布局视图的标题 -->
-      	<div class="lv_title1">
-              <span id="s_name" style="color: #1e3e50;font-size: 16px;margin: 0;padding-left:10px;line-height:50px;">苏州4#电站</span>
-              <span style="cursor:pointer;color:#428bca;">[切换]</span>
-              <ul style="margin-right: 50px;float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend">
-                  <a class="lv_a1">
-                      <i class="lv_fa fa-circle-o" style="color: rgb(63, 173, 34); display: none;"></i>
-                      <i class="lv_fa fa-check-circle-o" style="color: rgb(63, 173, 34); display: inline-block;"></i>
-                      正常
-                      <input type="hidden" value name="normal_deviceId_jqselect">
-                  </a>
-                  <a class="lv_a1">
-                      <i class="lv_fa fa-circle-o" style="color: #db412f; display: none;"></i>
-                      <i class="lv_fa fa-check-circle-o" style="color: #db412f; display: inline-block;"></i>
-                      故障
-                      <input type="hidden" value name="error_deviceId_jqselect">
-                  </a>
-                  <a class="lv_a1">
-                      <i class="lv_fa fa-circle-o" style="color: #f90; display: none;"></i>
-                      <i class="lv_fa fa-check-circle-o" style="color: #f90; display: inline-block;"></i>
-                      报警
-                      <input type="hidden" value name="alert_deviceId_jqselect">
-                  </a>
-                  <a class="lv_a1">
-                      <i class="lv_fa fa-circle-o" style="color: #999; display: none;"></i>
-                      <i class="lv_fa fa-check-circle-o" style="color: #999; display: inline-block;"></i>
-                      中断
-                      <input type="hidden" value name="break_deviceId_jqselect">
-                  </a>
-                  <a class="lv_a1">
-                      <i class="lv_fa fa-circle-o" style="color: #ccc; display: none;"></i>
-                      <i class="lv_fa fa-check-circle-o" style="color: #ccc; display: inline-block;"></i>
-                      阴影遮挡
-                      <input type="hidden" value name="shadow_deviceId_jqselect">
-                  </a>
-              </ul>
-              <ul style="margin-right: 0px; float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend_All">
-                  <!--
-                  <i style="display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;
-                  text-rendering: auto;-webkit-font-smoothing: antialiased;"></i>
-                  -->
-                   <a class="lv_a1">
-                      <i class="lv_fa fa-circle-o" style=" display: none;"></i>
-                      <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
-                      全选
-                      <input type="hidden" value name="all_deviceId_jqselect">
-                  </a>
-              </ul> 
+        <div style="position:absolute;z-index:1;width:100%">
+        	<div class="lv_title1">
+                <span style="background:#16da16;border-radius: 50%;width: 10px;height: 10px;display: inline-block;margin-left:10px;"></span>
+                <span id="s_name" style="color: #00000;font-size: 20px;margin: 0;line-height:50px;"></span>
+                <span style="cursor:pointer;color:#428bca;">[切换]</span>
+                <ul style="margin-right: 50px;float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend">
+                    <a class="lv_a1">
+                        <i class="lv_fa fa-circle-o" style="color: rgb(63, 173, 34); display: none;"></i>
+                        <i class="lv_fa fa-check-circle-o" style="color: rgb(63, 173, 34); display: inline-block;"></i>
+                        正常
+                        <input type="hidden" value name="normal_deviceId_jqselect">
+                    </a>
+                    <a class="lv_a1">
+                        <i class="lv_fa fa-circle-o" style="color: #db412f; display: none;"></i>
+                        <i class="lv_fa fa-check-circle-o" style="color: #db412f; display: inline-block;"></i>
+                        故障
+                        <input type="hidden" value name="error_deviceId_jqselect">
+                    </a>
+                    <a class="lv_a1">
+                        <i class="lv_fa fa-circle-o" style="color: #f90; display: none;"></i>
+                        <i class="lv_fa fa-check-circle-o" style="color: #f90; display: inline-block;"></i>
+                        报警
+                        <input type="hidden" value name="alert_deviceId_jqselect">
+                    </a>
+                    <a class="lv_a1">
+                        <i class="lv_fa fa-circle-o" style="color: #999; display: none;"></i>
+                        <i class="lv_fa fa-check-circle-o" style="color: #999; display: inline-block;"></i>
+                        中断
+                        <input type="hidden" value name="break_deviceId_jqselect">
+                    </a>
+                    <a class="lv_a1">
+                        <i class="lv_fa fa-circle-o" style="color: #ccc; display: none;"></i>
+                        <i class="lv_fa fa-check-circle-o" style="color: #ccc; display: inline-block;"></i>
+                        阴影遮挡
+                        <input type="hidden" value name="shadow_deviceId_jqselect">
+                    </a>
+                </ul>
+                <ul style="margin-right: 0px; float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend_All">
+                    <!--
+                    <i style="display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;
+                    text-rendering: auto;-webkit-font-smoothing: antialiased;"></i>
+                    -->
+                     <a class="lv_a1">
+                        <i class="lv_fa fa-circle-o" style=" display: none;"></i>
+                        <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
+                        全选
+                        <input type="hidden" value name="all_deviceId_jqselect">
+                    </a>
+                </ul> 
+          </div>
         </div>
-
         <div class="lv_content1" style="background-color: #F0F3F4">
-            <div id="ZL" class="clearfix" >
+            <div id="ZL" class="clearfix"  >
               <div class="zhenlie">
                   <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
                   <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">1#阵列</span>
@@ -201,7 +203,7 @@
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P0"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P1"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P2"></span>
-                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P3"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P3" style="color:red"></span>
                     <br>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P4"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe7_P5"></span>
@@ -324,7 +326,7 @@
                   <img src="__PUBLIC__/images/nibianqi1.png" class="imgnibianzhan"/>
                   <span style="font-size: 14px;margin: 0;padding-left:10px;line-height:50px;">14#阵列</span>
                    <div>
-                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P0"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P0" style="color:red"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P1"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P2"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe14_P3"></span>
@@ -456,7 +458,7 @@
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P3"></span>
                     <br>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P4"></span>
-                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P5"></span>
+                    <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P5" style="color:red"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P6"></span>
                     <span class="glyphicon glyphicon-th cop" title="S0_Invpe21_P7"></span>
                     <br>
@@ -503,11 +505,19 @@
             </div>
 
             <div class="biaoge2" style="display:none">
-              <table class="table_c" id="table3-1"></table>
-           </div>
-           <div style="margin-top:20px" class="clearfix">
-             <button  class="b_back">返回布局试图</button>
-           </div> 
+              <table class="table_c" id="table3-1" style="height:100%"></table>
+            </div>
+            <div class="biaoge3" style="display:none">
+              <div id="line_chart" style="width:100%;height:100%"></div>
+            </div>
+            <div id="b" style="height:10%;display:none" class="clearfix">
+              <div style="display:table-cell;vertical-align:middle;height:100%;float:right">
+                <button  class="b_back" id="b1">返回布局试图</button>
+                <button  class="b_back" id="b2" style="display:none;margin-right:20px">折线视图</button>
+                <button  class="b_back" id="b3" style="margin-right:20px">表格视图</button>
+              </div>
+                
+            </div> 
         </div>
 
       </div>
@@ -515,6 +525,7 @@
 
     <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
     <script type="text/javascript" src="__PUBLIC__/script/station/mmGrid.js"></script>
     <script type="text/javascript" src="__PUBLIC__/script/station/sidebar.js"></script>
     <script type="text/javascript" src="__PUBLIC__/script/station/header_public.js"></script>

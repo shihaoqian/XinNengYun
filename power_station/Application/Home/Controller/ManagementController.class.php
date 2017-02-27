@@ -6,6 +6,7 @@ use Think\Model;
 
 class ManagementController extends Controller {
 	public function get_station_name(){
+		session_start();
         echo $_SESSION['station_name'];
     }
 }

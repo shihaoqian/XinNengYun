@@ -19,6 +19,7 @@
 						  //
 						  //html: false
 						}, function(){
+						  window.location.href=url; 
 						  window.location.href="../Index/entrance"; 
 						});
 					break;
