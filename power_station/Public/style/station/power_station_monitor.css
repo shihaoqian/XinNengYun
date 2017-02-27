@@ -168,6 +168,7 @@ div,p,h{margin:0;padding:0;}
 }
 
 .lv_content1{
+	padding-top: 50px;
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -332,18 +333,25 @@ div,p,h{margin:0;padding:0;}
 }
 
 .biaoge2{
-	margin-top: 5%;
 	margin-left: auto;
 	margin-right: auto;
-	height:700px;
+	height:90%;
 }
-
+.biaoge3{
+	margin-left: auto;
+	margin-right: auto;
+	height:90%;
+}
 .b_back{
 	border-radius:6px;
 	background:#00acac;
-	height: 30px;
 	float:right;
 	color:white;
+	width: 100px;
+	height: 45px;
+	font-size: 15px
+	text-align: center;
+	
 }
 
 .trouble_alarm_table{

@@ -12,5 +12,5 @@ return array(
 	//表前缀 'DB_PREFIX'='test_'
 	//
 	//页面调试工具
-	'SHOW_PAGE_TRACE'=>true,
+
 );

@@ -19,7 +19,7 @@ function getFirstLineData(){
     var tmpdata=[];
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/hahaha/thinkphp/Home/Station/power_energy_monitor_firstLine",
+        url: "power_energy_monitor_firstLine",
         toServerData: "",
         async:false,
         success:function(data){
@@ -72,7 +72,7 @@ function getPowerEnergy(){
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/hahaha/thinkphp/Home/Station/power_energy_monitor_chart",
+        url: "power_energy_monitor_chart",
         data: "",          //发送到服务器的数据
         async:false,       //是否异步处理
         success:function(data){

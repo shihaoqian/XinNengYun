@@ -358,6 +358,6 @@ window.setInterval(update_overview_info,10000);
 
 				}
 			});
-			window.location.href="../User/index";
+			window.location.href=url;
 		})
 }))

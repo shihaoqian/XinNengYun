@@ -71,6 +71,24 @@ class StationController extends Controller {
        $result=$chart->where($map)->select();
        $this->ajaxReturn($result);
     }
+    //模拟故障信息折线图
+    public function test_trouble(){
+        $chart=new model('trouble');
+        $map['time'] = array('between',array('2016-11-01 05:00:00','2016-11-01 19:00:00'));
+       // $map['panelName']=$_POST['title'];
+        //echo $map['panelName'];
+        $result=$chart->where($map)->select();
+        $this->ajaxReturn($result);
+
+    }
+    //模拟故障信息表格
+    function trouble_copy(){
+        $chart=new model('trouble_copy');
+       // $map['panelName']=$_POST['title'];
+        //echo $map['panelName'];
+        $result=$chart->select();
+        $this->ajaxReturn($result);
+    }
     public function station_name(){
         session_start();
         $_SESSION['station_name']=$_POST["station_name"];  
