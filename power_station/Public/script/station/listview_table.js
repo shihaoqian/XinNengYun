@@ -70,38 +70,67 @@ $(document).ready(function(){
         // return fixed2(val);
     };
 
-    var cols3 = [
-        { title:'状态', name:'zhuangtai' ,width:90, align:'center', sortable: true, sortName:'secu_code'},
-        { title:'编号', name:'bianhao' ,width:70, align:'center',type:'number', sortable: true, sortName:'secu_abbr'},
-        { title:'名称', name:'mingcheng' ,width:140, align:'center', sortable: true ,sortName:'secu_mingcheng',renderer: highliht},
+     var cols3 = [
+        { title:'状态', name:'zhuangtai' , align:'center', sortable: true, sortName:'secu_code'},
+        { title:'编号', name:'bianhao' , align:'center',type:'number', sortable: true, sortName:'secu_abbr'},
+        { title:'名称', name:'mingcheng' , align:'center', sortable: true ,sortName:'secu_mingcheng',renderer: highliht},
         { title:'时间', name:'shijian' ,width:180, align:'center', sortable: true,sortName:'secu_shijian'},
-        { title:'DC电压(V)', name:'DCdianya' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'DC电流(A)', name:'DCdianliu' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'DC功率(kW)', name:'DCgonglv' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2
+        { title:'DC电压(V)', name:'DCdianya' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'DC电流(A)', name:'DCdianliu' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'DC功率(kW)', name:'DCgonglv' , align:'right',type:'number', sortable: true, renderer: fixed2
 
         // function(val){
         //     return (val / 100).toFixed(2);
         // }
     },
-        { title:'AC电压(V)', name:'ACdianya' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2
+        { title:'AC电压(V)', name:'ACdianya' , align:'right',type:'number', sortable: true, renderer: fixed2
         },
-        { title:'AC电流(A)', name:'ACdianliu' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'AC功率(kW)', name:'ACgonglv',width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'温度(C)', name:'wendu' ,width:90, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'效率(%)', name:'xiaolv' ,width:90, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'频率(Hz)', name:'pinlv' ,width:90, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'功率因素', name:'gonglvyinsu' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'日发电量(kWh)', name:'rifadianliang' ,width:140, align:'right',type:'number', sortable: true, renderer: fixed2},
-        { title:'总发电量(kWh)', name:'zongfadianliang' ,width:140, align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'AC电流(A)', name:'ACdianliu' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'AC功率(kW)', name:'ACgonglv', align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'温度(C)', name:'wendu' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'效率(%)', name:'xiaolv' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'频率(Hz)', name:'pinlv' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'功率因素', name:'gonglvyinsu' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'日发电量(kWh)', name:'rifadianliang' , align:'right',type:'number', sortable: true, renderer: fixed2},
+        { title:'总发电量(kWh)', name:'zongfadianliang' , align:'right',type:'number', sortable: true, renderer: fixed2},
 
     ];
+
+    // var cols3 = [
+    //     { title:'状态', name:'zhuangtai' ,width:90, align:'center', sortable: true, sortName:'secu_code'},
+    //     { title:'编号', name:'bianhao' ,width:70, align:'center',type:'number', sortable: true, sortName:'secu_abbr'},
+    //     { title:'名称', name:'mingcheng' ,width:140, align:'center', sortable: true ,sortName:'secu_mingcheng',renderer: highliht},
+    //     { title:'时间', name:'shijian' ,width:180, align:'center', sortable: true,sortName:'secu_shijian'},
+    //     { title:'DC电压(V)', name:'DCdianya' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'DC电流(A)', name:'DCdianliu' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'DC功率(kW)', name:'DCgonglv' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2
+
+    //     // function(val){
+    //     //     return (val / 100).toFixed(2);
+    //     // }
+    // },
+    //     { title:'AC电压(V)', name:'ACdianya' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2
+    //     },
+    //     { title:'AC电流(A)', name:'ACdianliu' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'AC功率(kW)', name:'ACgonglv',width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'温度(C)', name:'wendu' ,width:90, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'效率(%)', name:'xiaolv' ,width:90, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'频率(Hz)', name:'pinlv' ,width:90, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'功率因素', name:'gonglvyinsu' ,width:100, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'日发电量(kWh)', name:'rifadianliang' ,width:140, align:'right',type:'number', sortable: true, renderer: fixed2},
+    //     { title:'总发电量(kWh)', name:'zongfadianliang' ,width:140, align:'right',type:'number', sortable: true, renderer: fixed2},
+
+    // ];
     //客户端排序示例
     $('#table3-1').mmGrid({
         cols: cols3,
         items: items,
         sortName: 'bianhao',
         sortStatus: 'asc',
-        height:'100%'
+        fullWidthRows:true,
+        height:'100%',
+        // nowrap: false
+
             });
     //服务器端排序示例
     // $('#table3-2').mmGrid({
