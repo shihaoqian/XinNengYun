@@ -11,6 +11,7 @@ body {
 
 .overview {
     background-color: #FFF;
+    height: 100%;
 }
 
 .overview-title {
