@@ -11,6 +11,7 @@ body {
 
 .overview {
     background-color: #FFF;
+    height: 100%;
 }
 
 .overview-title {
@@ -317,4 +318,11 @@ body {
     border-bottom: 1px solid rgb(235, 235, 235);
     font-size: 14px;
     line-height: 40px;
+}
+
+.trouble-color {
+    color: #c0504d;
+}
+.warning-color {
+    color: #ffc700;
 }
