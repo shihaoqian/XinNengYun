@@ -119,7 +119,7 @@ div#div2{
 	position: absolute;
 	top: 30px;
 	left: 20px;
-	width: 300px;
+	width: 20%;
 	bottom: 30px;
 	z-index: 2;
 	color: #fff !important;
@@ -199,7 +199,7 @@ div#div2{
 	box-sizing: border-box;
 }
 .left4>div{
-	width: 147px;
+	width: 48.5%;
     position: relative;
     height: 48%;
     float: left;
@@ -376,7 +376,7 @@ div#div2{
 }
 .map_buttom{
 	position: absolute;
-	left: 350px;
+	left: 25%;
 	bottom: 30px;
 	color: blue;
 	box-sizing: border-box;

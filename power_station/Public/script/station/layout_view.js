@@ -5,6 +5,9 @@
 	var hh=$('.lv_content1').height()-50-$('#b').height();
     //console.log(hh);
 	var items = new Array();
+
+	//$('.zhenlie').height()*0.30+'px'
+	$('.cop').css('font-size',$('.zhenlie').height()*0.19+'px');
 	var fixed2 = function(val){
         return val.toFixed(2);
     }
@@ -34,13 +37,25 @@
         { title:'人工处理状态', name:'solve_state' , align:'center', sortable: true}
     ];
     //客户端排序示例
-     var grid=$('#table3-1').mmGrid({
+    var grid1=$('#table3-1').mmGrid({
 		cols: cols3,
 		//items: items,
+		lockDisplay:false,
 	    sortName: 'bianhao',
 	    sortStatus: 'asc',
 	    height:hh,
-	    fullWidthRows:true,
+	    autoLoad:false,
+	   fullWidthRows:true,
+	});
+    var grid2=$('#table3-2').mmGrid({
+		cols: cols4,
+		//items: items,
+		lockDisplay:false,
+	    sortName: 'bianhao',
+	    sortStatus: 'asc',
+	    height:hh,
+	    autoLoad:false,
+	   fullWidthRows:true,
 
 	});
     //console.log(grid.opts.cols);
@@ -58,10 +73,18 @@
 		$('#b1').css('display','block');
 		$('#b2').css('display','none');
 		$('#b3').css('display','block');
+		if(s_color=='rgb(0, 128, 0)'){
+	    	$('#b3').text("表格视图");
+	    }
+	    else{
+	    	$('#b3').text("显示故障信息");
+	    }
+		$('#r_ul').css('visibility','hidden');
+		$('.lv_a1').css('visibility','hidden');
 		show_chart();
 	});
 	//
-	//柱状图显示
+	//折线图显示
 	function show_chart(){
 		var charts_g = echarts.init(document.getElementById('line_chart'));
 		var dataPower=[];
@@ -98,6 +121,11 @@
 	            if(data!=null){
 	                for(var i=0;i<data.length;i++){
 	                    //console.log(data[i]['power']);
+	                    if(data[i]['time']>='2016-11-01 09:00:00'&&data[i]['time']<='2016-11-01 13:00:00'&&data[i]['power']==0){
+	                    	dataPower.push('');
+	                    	dataEnergy.push('');
+	                    	continue;
+	                    }
 	                    dataPower.push(data[i]['power']);
 	                    dataEnergy.push(data[i]['energy']);
 	                }
@@ -105,15 +133,23 @@
 	        }
 	    });
 
-
 		option = {
 		    title: {
-		        text: '  '+title+'功率趋势图',
+		        text: '  '+title+'功率发电趋势图',
 		    },
 		    backgroundColor: '#FFFFFF',    
 		    tooltip: {
-		        trigger: 'axis'         //提示触发为x轴
-
+		        trigger: 'axis',       //提示触发为x轴
+		        formatter:function(params){
+		        	//console.log(params);
+		        	var status;
+		        	if(params[0].name>'08:00'&&params[0].name<'17:30'&&params[0].data==0){
+		        		return params[0].name+'&nbsp&nbsp&nbsp&nbsp'+' 状态： '+'<i class="fa fa-circle mr5" style="color:red"></i>'+'故障'+'<br>'+'<i class="fa fa-circle mr5" style="color:#DD6460"></i>'+'实发功率 : '+params[0].data+'<br>'+'<i class="fa fa-circle mr5" style="color:#F1B25A"></i>'+'实发电量 : '+params[1].data;
+		        	}
+		        	else{
+		        		return params[0].name+'&nbsp&nbsp&nbsp&nbsp'+' 状态： '+'<i class="fa fa-circle mr5" style="color:#00acac"></i>'+'正常'+'<br>'+'<i class="fa fa-circle mr5" style="color:#DD6460"></i>'+'实发功率 : '+params[0].data+'<br>'+'<i class="fa fa-circle mr5" style="color:#F1B25A"></i>'+'实发电量 : '+params[1].data;
+		        	}
+		        }
 		    },
 		    legend: {              //上方可选择显示的 可点击的标题
 		        right: 80,
@@ -175,9 +211,14 @@
 		        type:'line',
 		        data:dataPower,
 		        symbol: 'none',
+		        itemStyle:{
+		        	normal:{
+		        		width:2
+		        	}
+		        },
 		        lineStyle: {
 		            normal: {
-		                width: 1
+		                width:2
 		            }
 		        },
 		    },
@@ -189,7 +230,8 @@
 		            symbol: 'none',  //没有网格线 
 		            lineStyle: {            //折线宽度
 		                normal: {
-		                    width: 1
+		                	
+		                    width: 2
 		                }
 		            },
 		            
@@ -198,9 +240,10 @@
 		        ]
 	    };
 
-                // 使用刚指定的配置项和数据显示图表。
+
 	    charts_g.setOption(option);
-	                //用于使chart自适应高度和宽度
+	    console.log(option.tooltip);
+	    //用于使chart自适应高度和宽度
 	    window.onresize = function () {
     		charts_g.resize(); //使第一个图表适应
 		}
@@ -209,9 +252,13 @@
 	function show_table(){
 		if(s_color=='rgb(0, 128, 0)'){
 	    	post_url="zl_info";
+	    	$('.mmGrid').eq(0).css('display','block');
+	    	$('.mmGrid').eq(1).css('display','none');
 	    }
 	    else{
 	    	post_url="trouble_copy";
+	    	$('.mmGrid').eq(0).css('display','none');
+	    	$('.mmGrid').eq(1).css('display','block');
 	    }
 		$.ajax({
 		        type: "POST",
@@ -223,7 +270,6 @@
 		            if(data!=null){
 		            	items=[];
 		            	if(post_url=="zl_info"){
-		            		grid.opts.cols=cols3;
 		            		for(var i=0;i<data.length;i++){
 			                //console.log(data[i]);
 				                items[i]={};
@@ -234,9 +280,9 @@
 				                items[i].DCgonglv=Number(data[i]['power']);
 				                items[i].DCdianliang=Number(data[i]['energy']);
 		                	}
+		                	grid1.load(items);
 		            	}
 		            	else{
-		            		grid.opts.cols=cols4;
 		            		for(var i=0;i<data.length;i++){
 			                //console.log(data[i]);
 				                items[i]={};
@@ -247,10 +293,10 @@
 				                items[i].t_description=data[i]['t_description'];
 				                items[i].solve_state=data[i]['solve_state'];
 		                	}
-		            	}
+		                	grid2.load(items);
+		            	}	
 		            }
-		         grid.load(items);
-		     }
+		        }
     	});
 	}
 	//返回布局视图
@@ -259,6 +305,8 @@
 		$('.biaoge2').css('display','none');
 		$('.biaoge3').css('display','none');
 		$('#b').css('display','none');
+		$('#r_ul').css('visibility','visible');
+		$('.lv_a1').css('visibility','visible');
 	})
 	//显示折线视图
 	$('#b2').click(function(){
@@ -280,5 +328,180 @@
 		$('#b3').css('display','none');
 		show_table();
 	});
+	//控制界面显示，全选，正常，故障等
+	var iszhengchang=2;
+	var isquanxuan=2;
+	var isguzhang=2;
+	var isbaojing=2;
+	var iszhongduan=2;
+	var isyinyingzhedang=2;
 
+	$('#quanxuan').click(function(){
+		if(isquanxuan==2){
+			isquanxuan=1;
+			$('#quanxuan1').css('display','inline-block');
+			$('#quanxuan2').css('display','none');
+			iszhengchang=1;
+			$('#zhengchang1').css('display','inline-block');
+			$('#zhengchang2').css('display','none');
+			isguzhang=1;
+			$('#guzhang1').css('display','inline-block');
+			$('#guzhang2').css('display','none');
+			isbaojing=1;
+			$('#baojing1').css('display','inline-block');
+			$('#baojing2').css('display','none');
+			iszhongduan=1;
+			$('#zhongduan1').css('display','inline-block');
+			$('#zhongduan2').css('display','none');
+			isyinyingzhedang=1;
+			$('#yinyingzhedang1').css('display','inline-block');
+			$('#yinyingzhedang2').css('display','none');
+
+			$('[class="glyphicon glyphicon-th cop"]').css('visibility','hidden');
+			
+		}else{
+			isquanxuan=2;
+			$('#quanxuan1').css('display','none');
+			$('#quanxuan2').css('display','inline-block');
+			iszhengchang=2;
+			$('#zhengchang1').css('display','none');
+			$('#zhengchang2').css('display','inline-block');
+			isguzhang=2;
+			$('#guzhang1').css('display','none');
+			$('#guzhang2').css('display','inline-block');
+			isbaojing=2;
+			$('#baojing1').css('display','none');
+			$('#baojing2').css('display','inline-block');
+			iszhongduan=2;
+			$('#zhongduan1').css('display','none');
+			$('#zhongduan2').css('display','inline-block');
+			isyinyingzhedang=2;
+			$('#yinyingzhedang1').css('display','none');
+			$('#yinyingzhedang2').css('display','inline-block');
+
+			$('[class="glyphicon glyphicon-th cop"]').css('visibility','visible');
+			
+		}
+	});
+	$('#zhengchang').click(function(){
+		if(iszhengchang==2){
+			iszhengchang=1;
+			$('#zhengchang1').css('display','inline-block');
+			$('#zhengchang2').css('display','none');
+			isquanxuan=1;
+			$('#quanxuan1').css('display','inline-block');
+			$('#quanxuan2').css('display','none');
+
+			$('[class="glyphicon glyphicon-th cop"][name!="fault"]').css('visibility','hidden');
+			
+		}else{
+			iszhengchang=2;
+			$('#zhengchang1').css('display','none');
+			$('#zhengchang2').css('display','inline-block');
+			if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+				isquanxuan=2;
+				$('#quanxuan1').css('display','none');
+				$('#quanxuan2').css('display','inline-block');
+			};
+
+			$('[class="glyphicon glyphicon-th cop"][name!="fault"]').css('visibility','visible');
+			
+		}
+	});
+	$('#guzhang').click(function(){
+		if(isguzhang==2){
+			isguzhang=1;
+			$('#guzhang1').css('display','inline-block');
+			$('#guzhang2').css('display','none');
+			isquanxuan=1;
+			$('#quanxuan1').css('display','inline-block');
+			$('#quanxuan2').css('display','none');
+
+			$('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+			
+		}else{
+			isguzhang=2;
+			$('#guzhang1').css('display','none');
+			$('#guzhang2').css('display','inline-block');
+			if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+				isquanxuan=2;
+				$('#quanxuan1').css('display','none');
+				$('#quanxuan2').css('display','inline-block');
+			};
+			$('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+			
+		}
+	});
+	$('#baojing').click(function(){
+		if(isbaojing==2){
+			isbaojing=1;
+			$('#baojing1').css('display','inline-block');
+			$('#baojing2').css('display','none');
+			isquanxuan=1;
+			$('#quanxuan1').css('display','inline-block');
+			$('#quanxuan2').css('display','none');
+
+			// $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+			
+		}else{
+			isbaojing=2;
+			$('#baojing1').css('display','none');
+			$('#baojing2').css('display','inline-block');
+			if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+				isquanxuan=2;
+				$('#quanxuan1').css('display','none');
+				$('#quanxuan2').css('display','inline-block');
+			};
+			// $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+			
+		}
+	});
+	$('#zhongduan').click(function(){
+		if(iszhongduan==2){
+			iszhongduan=1;
+			$('#zhongduan1').css('display','inline-block');
+			$('#zhongduan2').css('display','none');
+			isquanxuan=1;
+			$('#quanxuan1').css('display','inline-block');
+			$('#quanxuan2').css('display','none');
+
+			// $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+			
+		}else{
+			iszhongduan=2;
+			$('#zhongduan1').css('display','none');
+			$('#zhongduan2').css('display','inline-block');
+			if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+				isquanxuan=2;
+				$('#quanxuan1').css('display','none');
+				$('#quanxuan2').css('display','inline-block');
+			};
+			// $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+			
+		}
+	});
+	$('#yinyingzhedang').click(function(){
+		if(isyinyingzhedang==2){
+			isyinyingzhedang=1;
+			$('#yinyingzhedang1').css('display','inline-block');
+			$('#yinyingzhedang2').css('display','none');
+			isquanxuan=1;
+			$('#quanxuan1').css('display','inline-block');
+			$('#quanxuan2').css('display','none');
+
+			// $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+			
+		}else{
+			isyinyingzhedang=2;
+			$('#yinyingzhedang1').css('display','none');
+			$('#yinyingzhedang2').css('display','inline-block');
+			if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+				isquanxuan=2;
+				$('#quanxuan1').css('display','none');
+				$('#quanxuan2').css('display','inline-block');
+			};
+			// $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+			
+		}
+	});
 }));
