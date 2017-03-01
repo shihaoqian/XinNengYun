@@ -319,3 +319,10 @@ body {
     font-size: 14px;
     line-height: 40px;
 }
+
+.trouble-color {
+    color: #c0504d;
+}
+.warning-color {
+    color: #ffc700;
+}

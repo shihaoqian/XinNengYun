@@ -37,13 +37,16 @@ class AnalysisViewController extends Controller {
             $map['start_time'] = array("between",array($day.' 05:00:00',$day.' 19:00:00'));
             $map['t_level'] = "故障";
             $map['_logic'] = 'and';
-            $trouble_times[$i]['trouble'] = $chart->where($map)->count('t_level');
+            $trouble[$i]['trouble'] = $chart->where($map)->select();
+            // $trouble_times[$i]['trouble'] = $chart->where($map)->count('t_level');
             $map['t_level'] = "报警";
-            $trouble_times[$i]['warning'] = $chart->where($map)->count('t_level');
+            $trouble[$i]['warning'] = $chart->where($map)->select();
+            // $trouble_times[$i]['warning'] = $chart->where($map)->count('t_level');
         }
         
         //dump($trouble_times);
-        $this->ajaxReturn($trouble_times);
+        //$this->ajaxReturn($trouble_times);
+        $this->ajaxReturn($trouble);
 
     }
   

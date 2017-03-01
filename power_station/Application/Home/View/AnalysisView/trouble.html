@@ -56,6 +56,35 @@
                 报警
               </span>
             </div>
+            <!-- 模态框 -->
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center">故障信息</h4>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-striped b-light">
+                      <thead>
+                        <tr>
+                          <th class="text-center">开始时间</th>
+                          <th class="text-center">结束时间</th>
+                          <th class="text-center">故障类型</th>
+                          <th class="text-center">状态</th>
+                          <th class="text-center">功率</th>
+                          <th class="text-center">发电量</th>
+                          <th class="text-center">故障描述</th>
+                        </tr>
+                      </thead>
+                      <tbody id="modal-tbody">
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div id="timesChart" style="width: 100%; height: 300px"></div>
           </div>
           <div class="col-sm-12 panel">
@@ -96,7 +125,9 @@
     <script type="text/javascript">
 
       var trouble_times = [];
+      var trouble = [];
       var warning_times = [];
+      var warning = [];
       var days = [];
 
       $.ajax({
@@ -106,13 +137,27 @@
         async:false,
         success:function(data){
             for(var val in data) {
-              days[days.length] = val;
-              trouble_times[trouble_times.length] = data[val].trouble;
-              warning_times[warning_times.length] = data[val].warning;
-              
+              days.push(val);
+              if (data[val].trouble == null) {
+                trouble_times.push(0);
+                trouble.push(null);
+              } else {
+                trouble_times.push(data[val].trouble.length);
+                trouble.push(data[val].trouble);
+              }
+              if (data[val].warning == null) {
+                warning_times.push(0);
+                warning.push(null);
+              } else {
+                warning_times.push(data[val].warning.length);
+                warning.push(data[val].warning);
+              }              
             }
+            
         }
       });
+
+
       //timesChart视图
       var timesChart = echarts.init(document.getElementById('timesChart'));
       var option = {
@@ -192,6 +237,44 @@
       };
       // 使用刚指定的配置项和数据显示图表。
       timesChart.setOption(option);
+      timesChart.on('click',function(params) {
+        
+        var td = '';
+        for (var tro in trouble[params.dataIndex]) {
+          var start_time = trouble[params.dataIndex][tro].start_time;
+          var end_time = trouble[params.dataIndex][tro].end_time;
+          var t_level = trouble[params.dataIndex][tro].t_level;
+          var solve_state = trouble[params.dataIndex][tro].solve_state;
+          var power = trouble[params.dataIndex][tro].power;
+          var energy = trouble[params.dataIndex][tro].energy;
+          var t_description = trouble[params.dataIndex][tro].t_description;
+          td += '<tr><td class="text-center" style="color: #c0504d;">'+start_time+'</td>'+
+                    '<td class="text-center" style="color: #c0504d;">'+end_time+'</td>'+
+                    '<td class="text-center" style="color: #c0504d;">'+t_level+'</td>'+
+                    '<td class="text-center" style="color: #c0504d;">'+solve_state+'</td>'+
+                    '<td class="text-center" style="color: #c0504d;">'+power+'</td>'+
+                    '<td class="text-center" style="color: #c0504d;">'+energy+'</td>'+
+                    '<td class="text-center" style="color: #c0504d;">'+t_description+'</td></tr>';
+        }
+        for (var tro in warning[params.dataIndex]) {
+          var start_time = warning[params.dataIndex][tro].start_time;
+          var end_time = warning[params.dataIndex][tro].end_time;
+          var t_level = warning[params.dataIndex][tro].t_level;
+          var solve_state = warning[params.dataIndex][tro].solve_state;
+          var power = warning[params.dataIndex][tro].power;
+          var energy = warning[params.dataIndex][tro].energy;
+          var t_description = warning[params.dataIndex][tro].t_description;
+          td += '<tr><td class="text-center" style="color: #CD950C">'+start_time+'</td>'+
+                    '<td class="text-center" style="color: #CD950C">'+end_time+'</td>'+
+                    '<td class="text-center" style="color: #CD950C">'+t_level+'</td>'+
+                    '<td class="text-center" style="color: #CD950C">'+solve_state+'</td>'+
+                    '<td class="text-center" style="color: #CD950C">'+power+'</td>'+
+                    '<td class="text-center" style="color: #CD950C">'+energy+'</td>'+
+                    '<td class="text-center" style="color: #CD950C">'+t_description+'</td></tr>';
+        }
+        $("#modal-tbody").html(td);
+        $('.modal').modal('show');
+      });
 
       //faultTimesChart视图
       var faultTimesChart = echarts.init(document.getElementById('faultTimesChart'));
@@ -281,6 +364,48 @@
       };
       // 使用刚指定的配置项和数据显示图表。
       faultTimesChart.setOption(option);
+
+      faultTimesChart.on('click',function(params) {
+        
+        var td = '';
+        for (var tro in trouble[params.dataIndex]) {
+          var start_time = trouble[params.dataIndex][tro].start_time;
+          var end_time = trouble[params.dataIndex][tro].end_time;
+          var t_level = trouble[params.dataIndex][tro].t_level;
+          var solve_state = trouble[params.dataIndex][tro].solve_state;
+          var power = trouble[params.dataIndex][tro].power;
+          var energy = trouble[params.dataIndex][tro].energy;
+          var t_description = trouble[params.dataIndex][tro].t_description;
+          td += '<tr><td class="text-center" style="color: #4879df;">'+start_time+'</td>'+
+                    '<td class="text-center" style="color: #4879df;">'+end_time+'</td>'+
+                    '<td class="text-center" style="color: #4879df;">'+t_level+'</td>'+
+                    '<td class="text-center" style="color: #4879df;">'+solve_state+'</td>'+
+                    '<td class="text-center" style="color: #4879df;">'+power+'</td>'+
+                    '<td class="text-center" style="color: #4879df;">'+energy+'</td>'+
+                    '<td class="text-center" style="color: #4879df;">'+t_description+'</td></tr>';
+        }
+        for (var tro in warning[params.dataIndex]) {
+          var start_time = warning[params.dataIndex][tro].start_time;
+          var end_time = warning[params.dataIndex][tro].end_time;
+          var t_level = warning[params.dataIndex][tro].t_level;
+          var solve_state = warning[params.dataIndex][tro].solve_state;
+          var power = warning[params.dataIndex][tro].power;
+          var energy = warning[params.dataIndex][tro].energy;
+          var t_description = warning[params.dataIndex][tro].t_description;
+          td += '<tr><td class="text-center" style="color: #97c34b">'+start_time+'</td>'+
+                    '<td class="text-center" style="color: #97c34b">'+end_time+'</td>'+
+                    '<td class="text-center" style="color: #97c34b">'+t_level+'</td>'+
+                    '<td class="text-center" style="color: #97c34b">'+solve_state+'</td>'+
+                    '<td class="text-center" style="color: #97c34b">'+power+'</td>'+
+                    '<td class="text-center" style="color: #97c34b">'+energy+'</td>'+
+                    '<td class="text-center" style="color: #97c34b">'+t_description+'</td></tr>';
+        }
+        $("#modal-tbody").html(td);
+        $('.modal').modal('show');
+      });
+      faultTimesChart.on('click',function(params) {
+        $('.modal').modal('show');
+      });
 
       //faultRateChart视图
       var trouble_rate = ['0','0.2','0.23','0.4','0.13','0.5','0.1','0.67','0.1','0.23','0.41','0.1',
