@@ -51,13 +51,21 @@ class StationController extends Controller {
     }
     public function power_energy_monitor_firstLine(){
         // file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
-        file_put_contents('D:/php_log.txt',"hello22",FILE_USE_INCLUDE_PATH,null);
+        // file_put_contents('D:/php_log.txt',"hello22",FILE_USE_INCLUDE_PATH,null);
         $data=new model("power_station_monitor_total");
         // $maxId=$data->max("id");
         // $map["id"]=$maxId;
         // $result=$data->where($map)->select();
         $result=$data->order('id desc')->limit(1)->select();          //limit(10,25)  查询从第10行开始的25条数据
         
+        $this->ajaxReturn($result);
+    }
+
+    public function list_view_table(){
+        $selected_value = $_POST['sel_val'];
+        file_put_contents('D:/php_log.txt',print_r($selected_value,1),FILE_USE_INCLUDE_PATH,null);
+        $data = new model("list_view_table");
+        $result = $data->limit($selected_value)->select();
         $this->ajaxReturn($result);
     }
     
