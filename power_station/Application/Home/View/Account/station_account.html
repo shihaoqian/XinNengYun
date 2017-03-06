@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADA光伏电站</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/simple-line-icons-master/css/simple-line-icons.css" >
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/common/menu.css">
+     <link rel="stylesheet" type="text/css" href="__PUBLIC__/style/Account/account.css">
+    <link type="image/x-icon" rel="shortcut icon" href="__PUBLIC__/images/favicon.ico">
+  </head>
+  <body style="">
+  	
+    <!-- 顶部导航条 -->
+    <div id="topbar">
+      <include file="Common/topbar" />
+    </div>
+  <!-- 顶部影藏信息-->
+    <include file="Common/tophidden" />
+
+    <!-- 左侧菜单栏 -->
+     <div id="left">
+      <include file="Common/left" />
+    </div>
+
+    <!-- 主要内容 -->
+    <div id="right" >
+        <!--右侧第一个总览div-->
+        <div id="right_1">
+          <div style="height:50px;background:#1caf9a;color:white;font-size:19px;line-height:50px;padding-left:20px">
+              电站台账
+          </div>
+          <div style=""> 
+              <ul class="nav" style="cursor:pointer">
+                  <li>
+                    <a style="color:black"><i class="glyphicon glyphicon-folder-open" style="color:gray;margin-right:25px"></i>电站信息</a>
+                  </li>
+                   <li>
+                    <a style="color:black"><i class="glyphicon glyphicon-plus-sign" style="color:gray;margin-right:25px;font-size:15px"></i>厂区划分</a>
+                  </li>
+                  <li>
+                    <a style="color:black"><i class="glyphicon glyphicon-folder-open" style="color:gray;margin-right:25px"></i>设备台账<i class="fa fa-fw fa-angle-right" style="margin-left:55px"></i></a>
+                  </li>
+                  <li>
+                    <a style="color:#363f44;padding-left:50px;">箱变<span style="margin-left:70px;vertical-align: middle;">9</span></a>
+                    <a style="color:#363f44;padding-left:50px;">逆变器<span style="margin-left:55px;vertical-align: middle;">23</span></a>
+                    <a style="color:#363f44;padding-left:50px;">汇流箱<span style="margin-left:55px;vertical-align: middle;">2</span></a>
+                  </li>
+              </ul>
+          </div>
+        </div>
+        <!--右侧第二个div-->
+        <div id="right_2">
+          <div class="wrapper">
+            <!--第一个div-->
+            <div class="s_info">
+              <div style="border:1px solid #f0f3f4;height:50px;line-height:50px">
+                <span id="s_name" style="font-size:16px;padding-left:15px">苏州1号电站</span><span style="font-size:18px;color:rgb(66, 139, 202);cursor:pointer"> [切换]</span>
+              </div>
+              <div style="height:290px;background:white;padding:30px 35px">
+                <div class="info-station">
+                  <div id="line-sta">
+                    <span>电站编号</span><i>215000</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>电站名称</span><i>苏州1号电站</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>负责人</span><i>sjc</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>电话</span><i>18896581692</i>
+                  </div>  
+                </div>
+                <div class="info-station" style="margin-top:40px">
+                  <div id="line-sta">
+                    <span>投产时间</span><i>-----</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>停产时间</span><i>-----</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>邮编</span><i>215000</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>经纬度</span><i>------</i>
+                  </div>  
+                </div>
+                <div class="info-station" style="margin-top:40px">
+                  <div id="line-sta">
+                    <span>地址</span><i>-----</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>联系电话</span><i>0512-88888</i>
+                  </div>
+                  <div id="line-sta">
+                    <span>实景图片</span>
+                  </div>
+                  <div style="display:inline-block;margin-left: -10%;">
+                    <img style="height:66px;width:66px" src="__PUBLIC__/images/shijing1.jpg">
+                    <img style="height:66px;width:66px" src="__PUBLIC__/images/shijing2.jpg">
+                    <img style="height:66px;width:66px" src="__PUBLIC__/images/shijing3.jpg">
+                  </div>
+                </div>
+                <div class="info-station" style="margin-top:20px">
+                  <div id="line-sta">
+                    <span>其他介绍</span><i>-----</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--第二个div 厂区划分-->
+            <div class="area-divide" >
+              <div style="border:1px solid #f0f3f4;height:50px;line-height:50px;background:#f0f3f4">
+                <span  style="font-size:16px;padding-left:15px">厂区划分</span>
+              </div>
+              <div style="margin-top:10px;background:#fff">
+                <button class="btn btn1">新增</button>
+              </div>
+              <div style="background:#fff;margin-top:15px;padding:15px 15px">
+                <table style="width:100%">
+                  <thead>
+                    <tr>
+                      <th style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></th>
+                      <th>厂区名称</th>
+                      <th>装机容量</th>
+                      <th>厂区负责人</th>
+                      <th>地址</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                      <td>厂区三</td>
+                      <td>2000</td>
+                      <td>演示用户</td>
+                      <td>苏州昆山</td>
+                      <td>
+                        <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                        <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                      <td>厂区二</td>
+                      <td>5000</td>
+                      <td>演示用户</td>
+                      <td>苏州吴江</td>
+                      <td>
+                        <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                        <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                      <td>厂区一</td>
+                      <td>3000</td>
+                      <td>演示用户</td>
+                      <td>苏州新区</td>
+                      <td>
+                        <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                        <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--第三个div-->
+            <div class="device-account">
+              <div style="border:1px solid #f0f3f4;height:50px;line-height:50px;background:#f0f3f4">
+                <span  style="font-size:16px;padding-left:15px">设备台账</span>
+              </div>
+              <div>
+                <!--箱变-->
+                <div>
+                  <div style="border-bottom:1px dotted rgba(154, 150, 150, 0.31);font-size:16px;padding-left:25px">箱变</div>
+                </div>
+                <div style="vertical-align:bottom">
+                  <button class="btn btn2">新增</button>
+                  <button class="btn btn3">批量删除</button>
+                  <input type="text" name="" class="key-word" placeholder="关键字">
+                  <button class="btn btn2" style="margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px">查询</button>
+                </div>
+                <div style="background:#fff;margin-top:15px;padding:15px 15px">
+                  <table style="width:100%">
+                    <thead>
+                      <tr>
+                        <th style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></th>
+                        <th>编号</th>
+                        <th>设备名称</th>
+                        <th>产品型号</th>
+                        <th>位置</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>1</td>
+                        <td>1#1箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>2</td>
+                        <td>1#2箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>3</td>
+                        <td>1#3箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--逆变器-->
+                <div>
+                  <div style="border-bottom:1px dotted rgba(154, 150, 150, 0.31);font-size:16px;padding-left:25px">逆变器</div>
+                </div>
+                <div style="vertical-align:bottom">
+                  <button class="btn btn2">新增</button>
+                  <button class="btn btn3">批量删除</button>
+                  <input type="text" name="" class="key-word" placeholder="关键字">
+                  <button class="btn btn2" style="margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px">查询</button>
+                </div>
+                <div style="background:#fff;margin-top:15px;padding:15px 15px">
+                  <table style="width:100%">
+                    <thead>
+                      <tr>
+                        <th style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></th>
+                        <th>编号</th>
+                        <th>设备名称</th>
+                        <th>产品型号</th>
+                        <th>位置</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>1</td>
+                        <td>1#1箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>2</td>
+                        <td>1#2箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>3</td>
+                        <td>1#3箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--汇流箱-->
+                <div>
+                  <div style="border-bottom:1px dotted rgba(154, 150, 150, 0.31);font-size:16px;padding-left:25px">汇流箱</div>
+                </div>
+                <div style="vertical-align:bottom">
+                  <button class="btn btn2">新增</button>
+                  <button class="btn btn3">批量删除</button>
+                  <input type="text" name="" class="key-word" placeholder="关键字">
+                  <button class="btn btn2" style="margin-left:-5px;border-top-left-radius: 0px;border-bottom-left-radius: 0px">查询</button>
+                </div>
+                <div style="background:#fff;margin-top:15px;padding:15px 15px">
+                  <table style="width:100%">
+                    <thead>
+                      <tr>
+                        <th style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></th>
+                        <th>编号</th>
+                        <th>设备名称</th>
+                        <th>产品型号</th>
+                        <th>位置</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>1</td>
+                        <td>1#1箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>2</td>
+                        <td>1#2箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center"><input type="checkbox" name="" style="width:20px;height:20px"></td>
+                        <td>3</td>
+                        <td>1#3箱变</td>
+                        <td>YB-12系列箱式变电站-YB-12</td>
+                        <td>维达1#箱变</td>
+                        <td>
+                          <a style="color:#23b7e5;cursor: pointer;"><i class="icon-note"></i></a>
+                          <a style="color:#f27136;;cursor: pointer;"><i class="icon-trash"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="__PUBLIC__/Static/Jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Static/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/Static/echarts/dist/echarts.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/mmGrid.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/sidebar.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/script/station/header_public.js"></script>
+  </body>
+</html>
