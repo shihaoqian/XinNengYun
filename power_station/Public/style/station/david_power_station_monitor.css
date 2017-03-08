@@ -282,10 +282,18 @@ div,p,h{margin:0;padding:0;}
 	margin-left: 7px;
 	color: #98a6ad;
 }
+.meiyexianshi_1{
+	float: left;
+	margin-top: 6px;
+	font-size: 14px;
+	/*margin-right: 7px;*/
+	/*margin-left: 7px;*/
+	color: #98a6ad;
+}
 
 .listview_select{
 	float:left;
-	width: 45px;
+	width: 50px;
 	height: 30px;
 	padding: 0px;
 	border-color: #cfdadd;
@@ -342,6 +350,7 @@ div,p,h{margin:0;padding:0;}
     padding-top: 2px;
     padding-bottom: 4px;
     margin-bottom: 0;
+    cursor: pointer;
 }
 
 .lv_content11{
@@ -789,14 +798,14 @@ div,p,h{margin:0;padding:0;}
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    background: url(../images/sort-asc.png) no-repeat center center;
+    background: url(../../images/sort-asc.png) no-repeat center center;
 }
 
 .mmGrid .mmg-headWrapper .mmg-head th .mmg-titleWrapper .mmg-desc{
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    background: url(../images/sort-desc.png) no-repeat center center;
+    background: url(../../images/sort-desc.png) no-repeat center center;
 }
 
 .mmGrid  .mmg-colResizePointer{
