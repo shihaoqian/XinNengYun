@@ -51,6 +51,10 @@ var selected_value = $('#listview_select_id option:selected').val();
 
 // var dataFromServe = null;
 
+function selectOptionChange(){
+    getTableData(1,null);
+}
+
 function previousPage(){
     if(currentPageNum>1){
         currentPageNum = currentPageNum - 1;
@@ -119,6 +123,10 @@ function getTableData(cPageNum,name){
     // }];
     // console.log("1");
     // currentPageNum = 1;
+    var onChangeSelectName = $('#input_listview_query_device').val();
+    if(onChangeSelectName!=null){
+        name = onChangeSelectName;
+    }
     selected_value = $('#listview_select_id option:selected').val();
     currentPageNum = cPageNum;
     totalPageNum = parseInt(totalDataNum/selected_value)+1
@@ -160,7 +168,9 @@ $.ajax({
                     row.zongfadianliang = parseFloat(data[i]['zongfadianliang']);
                     items.push(row);
                 }
-                var table = $('#table3-1').mmGrid({   //应该只会执行一次，在第一次加载页面的时候执行  后面不会再执行
+            }
+
+             var table = $('#table3-1').mmGrid({   //应该只会执行一次，在第一次加载页面的时候执行  后面不会再执行
                     cols: cols3,
                     items: items,    //这个数据第一次加载一定要给，后面的load函数 只是用来更新数据的
                     sortName: 'bianhao',
@@ -171,11 +181,185 @@ $.ajax({
                 });
                 table.load(items);
 
-
-            }
         }
     });
    
+   //控制界面显示，全选，正常，故障等
+    var iszhengchang=2;
+    var isquanxuan=2;
+    var isguzhang=2;
+    var isbaojing=2;
+    var iszhongduan=2;
+    var isyinyingzhedang=2;
+
+    $('#quanxuan').click(function(){
+        if(isquanxuan==2){
+            isquanxuan=1;
+            $('#quanxuan1').css('display','inline-block');
+            $('#quanxuan2').css('display','none');
+            iszhengchang=1;
+            $('#zhengchang1').css('display','inline-block');
+            $('#zhengchang2').css('display','none');
+            isguzhang=1;
+            $('#guzhang1').css('display','inline-block');
+            $('#guzhang2').css('display','none');
+            isbaojing=1;
+            $('#baojing1').css('display','inline-block');
+            $('#baojing2').css('display','none');
+            iszhongduan=1;
+            $('#zhongduan1').css('display','inline-block');
+            $('#zhongduan2').css('display','none');
+            isyinyingzhedang=1;
+            $('#yinyingzhedang1').css('display','inline-block');
+            $('#yinyingzhedang2').css('display','none');
+
+            // $('[class="glyphicon glyphicon-th cop"]').css('visibility','hidden');
+            
+        }else{
+            isquanxuan=2;
+            $('#quanxuan1').css('display','none');
+            $('#quanxuan2').css('display','inline-block');
+            iszhengchang=2;
+            $('#zhengchang1').css('display','none');
+            $('#zhengchang2').css('display','inline-block');
+            isguzhang=2;
+            $('#guzhang1').css('display','none');
+            $('#guzhang2').css('display','inline-block');
+            isbaojing=2;
+            $('#baojing1').css('display','none');
+            $('#baojing2').css('display','inline-block');
+            iszhongduan=2;
+            $('#zhongduan1').css('display','none');
+            $('#zhongduan2').css('display','inline-block');
+            isyinyingzhedang=2;
+            $('#yinyingzhedang1').css('display','none');
+            $('#yinyingzhedang2').css('display','inline-block');
+
+            // $('[class="glyphicon glyphicon-th cop"]').css('visibility','visible');
+            
+        }
+    });
+    $('#zhengchang').click(function(){
+        if(iszhengchang==2){
+            iszhengchang=1;
+            $('#zhengchang1').css('display','inline-block');
+            $('#zhengchang2').css('display','none');
+            isquanxuan=1;
+            $('#quanxuan1').css('display','inline-block');
+            $('#quanxuan2').css('display','none');
+
+            // $('[class="glyphicon glyphicon-th cop"][name!="fault"]').css('visibility','hidden');
+            
+        }else{
+            iszhengchang=2;
+            $('#zhengchang1').css('display','none');
+            $('#zhengchang2').css('display','inline-block');
+            if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+                isquanxuan=2;
+                $('#quanxuan1').css('display','none');
+                $('#quanxuan2').css('display','inline-block');
+            };
+
+            // $('[class="glyphicon glyphicon-th cop"][name!="fault"]').css('visibility','visible');
+            
+        }
+    });
+    $('#guzhang').click(function(){
+        if(isguzhang==2){
+            isguzhang=1;
+            $('#guzhang1').css('display','inline-block');
+            $('#guzhang2').css('display','none');
+            isquanxuan=1;
+            $('#quanxuan1').css('display','inline-block');
+            $('#quanxuan2').css('display','none');
+
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+            
+        }else{
+            isguzhang=2;
+            $('#guzhang1').css('display','none');
+            $('#guzhang2').css('display','inline-block');
+            if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+                isquanxuan=2;
+                $('#quanxuan1').css('display','none');
+                $('#quanxuan2').css('display','inline-block');
+            };
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+            
+        }
+    });
+    $('#baojing').click(function(){
+        if(isbaojing==2){
+            isbaojing=1;
+            $('#baojing1').css('display','inline-block');
+            $('#baojing2').css('display','none');
+            isquanxuan=1;
+            $('#quanxuan1').css('display','inline-block');
+            $('#quanxuan2').css('display','none');
+
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+            
+        }else{
+            isbaojing=2;
+            $('#baojing1').css('display','none');
+            $('#baojing2').css('display','inline-block');
+            if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+                isquanxuan=2;
+                $('#quanxuan1').css('display','none');
+                $('#quanxuan2').css('display','inline-block');
+            };
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+            
+        }
+    });
+    $('#zhongduan').click(function(){
+        if(iszhongduan==2){
+            iszhongduan=1;
+            $('#zhongduan1').css('display','inline-block');
+            $('#zhongduan2').css('display','none');
+            isquanxuan=1;
+            $('#quanxuan1').css('display','inline-block');
+            $('#quanxuan2').css('display','none');
+
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+            
+        }else{
+            iszhongduan=2;
+            $('#zhongduan1').css('display','none');
+            $('#zhongduan2').css('display','inline-block');
+            if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+                isquanxuan=2;
+                $('#quanxuan1').css('display','none');
+                $('#quanxuan2').css('display','inline-block');
+            };
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+            
+        }
+    });
+    $('#yinyingzhedang').click(function(){
+        if(isyinyingzhedang==2){
+            isyinyingzhedang=1;
+            $('#yinyingzhedang1').css('display','inline-block');
+            $('#yinyingzhedang2').css('display','none');
+            isquanxuan=1;
+            $('#quanxuan1').css('display','inline-block');
+            $('#quanxuan2').css('display','none');
+
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','hidden');
+            
+        }else{
+            isyinyingzhedang=2;
+            $('#yinyingzhedang1').css('display','none');
+            $('#yinyingzhedang2').css('display','inline-block');
+            if(iszhengchang==2&&isguzhang==2&&isbaojing==2&&iszhongduan==2&&isyinyingzhedang==2){
+                isquanxuan=2;
+                $('#quanxuan1').css('display','none');
+                $('#quanxuan2').css('display','inline-block');
+            };
+            // $('[class="glyphicon glyphicon-th cop"][name="fault"]').css('visibility','visible');
+            
+        }
+    });
 
   
 }

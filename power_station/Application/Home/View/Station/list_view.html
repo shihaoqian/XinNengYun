@@ -21,52 +21,49 @@
             <span style="cursor:pointer;color:#428bca;">[切换]</span>
             <span style="cursor:pointer;color:#428bca;margin-left:40px;font-size: 16px;">逆变器</span>
             <ul style="margin-right: 50px;float: right;list-style: none;" name="selectDevStatusLegend">
-                 <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style=" display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
-                    全选
-                    <input type="hidden" value name="all_deviceId_jqselect">
-                </a>
-                <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style="color: rgb(63, 173, 34); display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: rgb(63, 173, 34); display: inline-block;"></i>
-                    正常
-                    <input type="hidden" value name="normal_deviceId_jqselect">
-                </a>
-                <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style="color: #db412f; display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: #db412f; display: inline-block;"></i>
-                    故障
-                    <input type="hidden" value name="error_deviceId_jqselect">
-                </a>
-                <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style="color: #f90; display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: #f90; display: inline-block;"></i>
-                    报警
-                    <input type="hidden" value name="alert_deviceId_jqselect">
-                </a>
-                <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style="color: #999; display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: #999; display: inline-block;"></i>
-                    中断
-                    <input type="hidden" value name="break_deviceId_jqselect">
-                </a>
-                <!-- <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style="color: #ccc; display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: #ccc; display: inline-block;"></i>
-                    阴影遮挡
-                    <input type="hidden" value name="shadow_deviceId_jqselect">
-                </a> -->
+                 <div class="lv_a1" id="zhengchang">
+                        <i id="zhengchang1" class="lv_fa fa-circle-o" style="color: rgb(63, 173, 34); display: none;"></i>
+                        <i id="zhengchang2" class="lv_fa fa-check-circle-o" style="color: rgb(63, 173, 34); display: inline-block;"></i>
+                        正常
+                        <input type="hidden" value name="normal_deviceId_jqselect">
+                    </div>
+                    <div class="lv_a1" id="guzhang">
+                        <i id="guzhang1" class="lv_fa fa-circle-o" style="color: #db412f; display: none;"></i>
+                        <i id="guzhang2" class="lv_fa fa-check-circle-o" style="color: #db412f; display: inline-block;"></i>
+                        故障
+                        <input type="hidden" value name="error_deviceId_jqselect">
+                    </div>
+                    <div class="lv_a1"  id="baojing">
+                        <i  id="baojing1" class="lv_fa fa-circle-o" style="color: #f90; display: none;"></i>
+                        <i  id="baojing2" class="lv_fa fa-check-circle-o" style="color: #f90; display: inline-block;"></i>
+                        报警
+                        <input type="hidden" value name="alert_deviceId_jqselect">
+                    </div>
+                    <div class="lv_a1" id="zhongduan">
+                        <i id="zhongduan1" class="lv_fa fa-circle-o" style="color: #999; display: none;"></i>
+                        <i id="zhongduan2" class="lv_fa fa-check-circle-o" style="color: #999; display: inline-block;"></i>
+                        中断
+                        <input type="hidden" value name="break_deviceId_jqselect">
+                    </div>
+                    <div class="lv_a1" id="yinyingzhedang">
+                        <i id="yinyingzhedang1" class="lv_fa fa-circle-o" style="color: #ccc; display: none;"></i>
+                        <i id="yinyingzhedang2" class="lv_fa fa-check-circle-o" style="color: #ccc; display: inline-block;"></i>
+                        阴影遮挡
+                        <input type="hidden" value name="shadow_deviceId_jqselect">
+                    </div>
             </ul>
-          <!--   <ul style="margin-right: 0px; float: right;list-style: none;" name="selectDevStatusLegend_All">
-                
-                 <a class="lv_a1">
-                    <i class="lv_fa fa-circle-o" style=" display: none;"></i>
-                    <i class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
-                    全选
-                    <input type="hidden" value name="all_deviceId_jqselect">
-                </a>
-            </ul>  -->
+             <ul style="margin-right: 0px; float: right;list-style: none;margin-bottom:0px;" name="selectDevStatusLegend_All">
+                    <!--
+                    <i style="display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;
+                    text-rendering: auto;-webkit-font-smoothing: antialiased;"></i>
+                    -->
+                     <div class="lv_a1" id="quanxuan">
+                        <i id="quanxuan1" class="lv_fa fa-circle-o" style=" display: none;"></i>
+                        <i id="quanxuan2" class="lv_fa fa-check-circle-o" style="color: rgb(51,51,51); display: inline-block;"></i>
+                        全选
+                        <input type="hidden" value name="all_deviceId_jqselect">
+                    </div>
+                </ul> 
         </div>
 
         <div class="lv_content11">
@@ -90,7 +87,7 @@
                     </ul>
                     <span style="float:right;">
                         <small class="meiyexianshi">每页显示:</small>
-                        <select class="listview_select" id="listview_select_id" onchange="getTableData(1,null)">
+                        <select class="listview_select" id="listview_select_id" onchange="selectOptionChange()">
                           <option checked value="10">10</option>
                           <option value="20">20</option>
                           <option value="20">30</option>
