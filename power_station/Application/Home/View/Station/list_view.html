@@ -1,5 +1,5 @@
 <include file="Common/station_monitor_header" />
-    
+<body onload="getTotalDataNum();getTableData(1,null);">
     <!-- 顶部导航条 -->
     <div id="topbar">
       <include file="Common/topbar" />
@@ -71,33 +71,36 @@
 
         <div class="lv_content11">
             <div class="chaxun">
-                <input type="text" name="" class="listview_shurukuang" placeholder="请输入设备编号 / 名称">
-                <button type="button" class="listview_chaxun">查询</button>
+                <input id="input_listview_query_device" type="text" name="" class="listview_shurukuang" placeholder="请输入设备编号 / 名称">
+                <button type="button" class="listview_chaxun" onclick="query_device()">查询</button>
                 <div style="float:right;">
                     <ul class="list_view_ul">
                         <li>
-                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_left.png">
+                          <img onclick="previousPage()" style="cursor:pointer;" src="__PUBLIC__/images/button_left.png">
                         </li>
                         <li>
-                          <input type="text" name="" class="listview_shuru2">
+                          <input id="listview_turnPageNum" type="text" name="" class="listview_shuru2">
                         </li>
                         <li>
-                          <a href="" class="listview_a">跳转</a>
+                          <span  onclick="turnPage()" class="listview_a">跳转</span>
                         </li>
                         <li>
-                          <img style="cursor:pointer;" src="__PUBLIC__/images/button_right.png">
+                          <img onclick="nextPage()" style="cursor:pointer;" src="__PUBLIC__/images/button_right.png">
                         </li>
                     </ul>
                     <span style="float:right;">
                         <small class="meiyexianshi">每页显示:</small>
-                        <select class="listview_select" id="listview_select_id" onchange="firstLoadPage()">
+                        <select class="listview_select" id="listview_select_id" onchange="getTableData(1,null)">
                           <option checked value="10">10</option>
                           <option value="20">20</option>
                           <option value="20">30</option>
                           <option value="20">50</option>
                           <option value="20">100</option>
                         </select>
-                        <small class="meiyexianshi">页数1/1</small>
+                        <small class="meiyexianshi">页数</small>
+                        <small class="meiyexianshi_1" id="listview_currentPage">1</small>
+                        <small class="meiyexianshi_1">/</small>
+                        <small class="meiyexianshi_1" id="listview_totalPage">1</small>
 
                     </span>
                 </div>
