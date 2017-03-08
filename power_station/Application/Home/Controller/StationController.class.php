@@ -80,13 +80,15 @@ class StationController extends Controller {
             // $map['bianhao'] = "2#7A逆变器";
             $data = new model("list_view_table");
             $result = $data->where($map)->limit($selected_value * ($needPageNum-1), $selected_value)->select();
-            // file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
-            // if($result==null){
-            //     $map['mingcheng'] = $device_name;
-            //     $data = new model("list_view_table");
-            //     $result = $data->where($map)->limit($selected_value * ($needPageNum-1), $selected_value)->select();
+            file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
+            file_put_contents('D:/php_log3.txt',print_r("1111",1),FILE_USE_INCLUDE_PATH,null);
+            if($result==null){
+                file_put_contents('D:/php_log2.txt',print_r("22",1),FILE_USE_INCLUDE_PATH,null);
+                $map2['mingcheng'] = $device_name;
+                $data = new model("list_view_table");
+                $result = $data->where($map2)->limit($selected_value * ($needPageNum-1), $selected_value)->select();
 
-            // }
+            }
         }
         $this->ajaxReturn($result);
         
