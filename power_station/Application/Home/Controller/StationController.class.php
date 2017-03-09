@@ -65,14 +65,12 @@ class StationController extends Controller {
         $selected_value = $_POST['sel_val'];  //每页显示几条数据
         $needPageNum = $_POST['pageNum'];
         $device_name = $_POST['name'];
-        // file_put_contents('D:/php_log.txt',print_r($selected_value,1),FILE_USE_INCLUDE_PATH,null);
-        // file_put_contents('D:/php_log2.txt',print_r($needPageNum,1),FILE_USE_INCLUDE_PATH,null);
+        $showing_bianhao = $_POST['showingBianHao'];
         if($device_name==null){  //$device_name=''  也是 null
             // file_put_contents('D:/php_log.txt',print_r("1",1),FILE_USE_INCLUDE_PATH,null);
             $data = new model("list_view_table");
             $result = $data->limit($selected_value * ($needPageNum-1), $selected_value)->select();
             // $result = $data->limit(10,10)->select();
-            
         }else{
             // file_put_contents('D:/php_log.txt',print_r("2",1),FILE_USE_INCLUDE_PATH,null);
             $map['bianhao'] = $device_name;
@@ -80,8 +78,8 @@ class StationController extends Controller {
             // $map['bianhao'] = "2#7A逆变器";
             $data = new model("list_view_table");
             $result = $data->where($map)->limit($selected_value * ($needPageNum-1), $selected_value)->select();
-            file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
-            file_put_contents('D:/php_log3.txt',print_r("1111",1),FILE_USE_INCLUDE_PATH,null);
+            // file_put_contents('D:/php_log.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
+            // file_put_contents('D:/php_log3.txt',print_r("1111",1),FILE_USE_INCLUDE_PATH,null);
             if($result==null){
                 file_put_contents('D:/php_log2.txt',print_r("22",1),FILE_USE_INCLUDE_PATH,null);
                 $map2['mingcheng'] = $device_name;
@@ -92,6 +90,14 @@ class StationController extends Controller {
         }
         $this->ajaxReturn($result);
         
+    }
+
+    public function list_view_table_autoGetData(){
+        $showingBianHao = $_POST['showingBianHao'];
+        file_put_contents('D:/php_log4.txt',print_r($showing_bianhao[0],1),FILE_USE_INCLUDE_PATH,null);
+        $data = new model("list_view_table");
+        // $map3['bianhao']  = array('in',array('1','5','8'));
+        $result = $data->select();
     }
 
     public function listview_totalPageNum(){
