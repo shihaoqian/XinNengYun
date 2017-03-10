@@ -45,13 +45,14 @@ var cols3 = [
 
 
 // var currentPageNum = 1;
-var name="";
+var queryName="";
 var currentPageNum = 1;
 var totalPageNum = 0;
 var totalDataNum = 0;
 var selected_value = $('#listview_select_id option:selected').val();
 var items = [];
 var showingBianHao = [];
+var autoInterval;
 
 var table = $('#table3-1').mmGrid({   //应该只会执行一次，在第一次加载页面的时候执行  后面不会再执行
                 cols: cols3,
@@ -97,8 +98,9 @@ function turnPage(){
         currentPageNum = turnPage;
         $('#listview_currentPage').text(currentPageNum);
         getTableData(currentPageNum,null);
+        // $('#listview_turnPageNum').text("");
     }
-    console.log("turnPage="+turnPage);
+    // console.log("turnPage="+turnPage);
 }
 
 function detectIsNum(num){
@@ -108,55 +110,54 @@ function detectIsNum(num){
 }
 
 function query_device(){
-    var name = $('#input_listview_query_device').val();
+    queryName = $('#input_listview_query_device').val();
     currentPageNum = 1;
     $('#listview_currentPage').text("1");
-    getTableData(1,name);
+    getTableData(1,queryName);
+    getTotalDataNum();
     // $('#hanyuehui').html($('#input_listview_query_device').val());
 }
 
 function getTotalDataNum(){
+
     $.ajax({
         type: "POST",
         url: "listview_totalPageNum",
-        data: "",
-        async: false,
+        data: {'queryName':queryName},
+        async: true,
         success: function(data){
             if(data!=null){
                 totalDataNum = data;
-                // totalPageNum = parseInt(totalDataNum/selected_value)+1;
-                // $('#listview_currentPage').text(currentPageNum);
-                // $('#listview_totalPage').text(totalPageNum);
-                
+                selected_value = $('#listview_select_id option:selected').val();
+                totalPageNum = parseInt(totalDataNum/selected_value)+1;
+                $('#listview_totalPage').text(totalPageNum);
             }
-            
             
         }
     });
+    
 }
 
 function autoRefreshData(){
-    // setInterval("autoGetData()", 5000); //每隔5秒刷新
-    autoGetData();
+    autoInterval = setInterval("autoGetData()", 5000); //每隔5秒刷新
+    // autoGetData();
 }
 
 function autoGetData(){
     showingBianHao = [];
-    // console.log(items.length);
     if(items!=null){
-        console.log("q1111111111111111");
         for(var i=0;i<items.length;i++){
-            console.log("q2222222222222");
             showingBianHao.push(items[i]['bianhao']);
         }
         autoGetShowingData(showingBianHao);
-        console.log("showingBianHao=");
+        console.log("autogetData showingBianHao=");
         console.log(showingBianHao);
 
     }
 }
 
 function autoGetShowingData(showingBianHao){
+
     $.ajax({
         type: "POST",
         url: "list_view_table_autoGetData",
@@ -164,8 +165,6 @@ function autoGetShowingData(showingBianHao){
         async: true,                        //禁止异步，即同步，则再执行$.ajax({});这句话时，会锁死整个浏览器，只有这个函数执行完成，才能进行其他操作
                                             //如果是true的话，这个函数和其他函数没有顺序关系，但是如果这个函数进入执行，则后面的函数不会再执行。
         success: function(data){
-            // dataFromServe = data;
-            // console.log(data);
             items = [];
             showingBianHao = [];
             if(data!=null){
@@ -192,14 +191,17 @@ function autoGetShowingData(showingBianHao){
             }else{
                 items=[];
             }
-            console.log("ajax receive items="+items);
+            console.log("ajax2(auto) receive items="+items);
             table.load(items);
 
+            
         }
     });
 }
 
 function getTableData(cPageNum,name){
+
+    // document.write("22222222222222222222");
 
     // // //本地数据
     // var items = [
@@ -212,24 +214,16 @@ function getTableData(cPageNum,name){
     //     DCgonglv:9.34,ACdianya:33.4,ACdianliu:12.22,ACgonglv:20,wendu:21,xiaolv:98,pinlv:50.00,gonglvyinsu:0.99,
     //     rifadianliang:548.70,zongfadianliang:15000
     // }];
-    // console.log("1");
     // currentPageNum = 1;
-    var onChangeSelectName = $('#input_listview_query_device').val();
-    if(onChangeSelectName!=null){
-        name = onChangeSelectName;
-    }
+    // var onChangeSelectName = $('#input_listview_query_device').val();
+    name = queryName;
     selected_value = $('#listview_select_id option:selected').val();
     currentPageNum = cPageNum;
     totalPageNum = parseInt(totalDataNum/selected_value)+1;
-
-    // console.log("currentPageNum="+currentPageNum);
-    // console.log("totalPageNum="+totalPageNum);
-    console.log("name="+name);
     
     
     $('#listview_currentPage').text(currentPageNum);
     $('#listview_totalPage').text(totalPageNum);
-    // console.log(selected_value);
     $.ajax({
         type: "POST",
         url: "list_view_table",
@@ -237,8 +231,6 @@ function getTableData(cPageNum,name){
         async: true,                        //禁止异步，即同步，则再执行$.ajax({});这句话时，会锁死整个浏览器，只有这个函数执行完成，才能进行其他操作
                                             //如果是true的话，这个函数和其他函数没有顺序关系，但是如果这个函数进入执行，则后面的函数不会再执行。
         success: function(data){
-            // dataFromServe = data;
-            // console.log(data);
             items = [];
             if(data!=null){
                 for(var i=0;i<data.length;i++){
@@ -276,6 +268,7 @@ function getTableData(cPageNum,name){
             //     // nowrap: false
             //     });
             table.load(items);
+            window.clearInterval(autoInterval);
             autoRefreshData();
 
         }
