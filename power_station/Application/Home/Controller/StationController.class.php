@@ -69,7 +69,11 @@ class StationController extends Controller {
     }
 
     public function list_view_table(){
-        // var_dump("qqqqqqqqqqqqqqqqqqqqqq");
+        
+        // $info = '测试信息';
+        // trace($info,'提示');
+        
+
         $selected_value = $_POST['sel_val'];  //每页显示几条数据
         $needPageNum = $_POST['pageNum'];
         $device_name = $_POST['name'];
@@ -80,7 +84,8 @@ class StationController extends Controller {
             $result = $data->limit($selected_value * ($needPageNum-1), $selected_value)->select();
             // file_put_contents('D:/php_log2.txt',print_r($result,1),FILE_USE_INCLUDE_PATH,null);
             // $result = $data->limit(10,10)->select();
-        }else{
+        }
+        else{
             // file_put_contents('D:/php_log.txt',print_r("2",1),FILE_USE_INCLUDE_PATH,null);
             $map['bianhao'] = $device_name;
             // file_put_contents('D:/php_log3.txt',print_r($device_name,1),FILE_USE_INCLUDE_PATH,null);
@@ -99,10 +104,12 @@ class StationController extends Controller {
             }
         }
         $this->ajaxReturn($result);
+        dump("123----------------------------------------------------------------------");
         
     }
 
     public function list_view_table_autoGetData(){
+        // dump("111111111111111111111111111111111111---------------------------------------------------------------------");
         $showingBianHao = $_POST['showingBianHao'];  //得到正在表格中显示的数据的bianhao数组
         $data = new model("list_view_table");
         $map3['bianhao']  = array('in',$showingBianHao);
@@ -112,6 +119,9 @@ class StationController extends Controller {
     }
 
     public function listview_totalPageNum(){
+        $info = '测试信息';
+        trace($info,'提示',"调试");
+
         $queryName = $_POST['queryName'];
         $data = new model("list_view_table");
         if($queryName==null){

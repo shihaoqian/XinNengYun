@@ -13,4 +13,8 @@ return array(
 	//
 	//页面调试工具
 
+	// 显示页面Trace信息  我们看到的LOGO后面的数字就是当前页面的执行时间（单位是秒） 点击该图标后，会展开详细的页面Trace信息，
+	'SHOW_PAGE_TRACE' =>true, 
+
+
 );
