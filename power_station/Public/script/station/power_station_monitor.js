@@ -20,7 +20,7 @@ function getFirstLineData(){
     $.ajax({
         type: "POST",
         url: "power_energy_monitor_firstLine",
-        toServerData: "",
+        data: "",
         async:false,
         success:function(data){
             // console.log(data[0]['powerstation_num']);
@@ -79,9 +79,8 @@ function getPowerEnergy(){
         data: "",          //发送到服务器的数据
         async:false,       //是否异步处理
         success:function(data){
-            // console.log(data);
+            // console.log(data[0]['power']);
             if(data!=null){
-
 
                 for(var i=0;i<data.length;i++){
                     //console.log(data[i]['power']);
