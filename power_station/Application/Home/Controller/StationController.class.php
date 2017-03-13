@@ -72,6 +72,7 @@ class StationController extends Controller {
         
         // $info = '测试信息';
         // trace($info,'提示');
+        dump("123----------------------------------------------------------------------");
         
 
         $selected_value = $_POST['sel_val'];  //每页显示几条数据
@@ -104,7 +105,7 @@ class StationController extends Controller {
             }
         }
         $this->ajaxReturn($result);
-        dump("123----------------------------------------------------------------------");
+        
         
     }
 
